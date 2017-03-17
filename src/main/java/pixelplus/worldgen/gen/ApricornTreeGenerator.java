@@ -37,7 +37,8 @@ public class ApricornTreeGenerator implements IWorldGenerator {
     @Override
     public void generate(Random rand, int chunkX, int chunkZ, World world, IChunkGenerator gen, IChunkProvider provider) {
         if (world.provider.getDimensionType() != DimensionType.OVERWORLD) return;
-        if (rand.nextInt(10) != 0) return;
+        int randChance = world.getWorldType() == WorldType.FLAT ? 100 : 10;
+        if (rand.nextInt(randChance) != 0) return;
         List<IBlockState> states = new ArrayList<IBlockState>();
         int x = chunkX * 16 + rand.nextInt(16);
         int z = chunkZ * 16 + rand.nextInt(16);
@@ -85,9 +86,9 @@ public class ApricornTreeGenerator implements IWorldGenerator {
     private BlockPos findGround(World world, int x, int y, int z) {
         int height = y;
         boolean groundFound = false;
-        while (height > 64 && !groundFound) {
+        int minHeight = world.getWorldType() == WorldType.FLAT ? 3 : 64;
+        while (height > minHeight && !groundFound) {
             BlockPos pos = new BlockPos(x, height, z);
-            IBlockState state = world.getBlockState(pos);
             if (!isGround(world, pos))
                 height--;
             else
