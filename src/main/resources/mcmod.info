@@ -1,0 +1,16 @@
+[
+{
+  "modid": "pixelplus",
+  "name": "Pixelmon Plus",
+  "description": "Extra content for Pixelmon.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["BeetoGuy"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

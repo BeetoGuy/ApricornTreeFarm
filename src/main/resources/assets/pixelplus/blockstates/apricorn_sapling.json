@@ -1,0 +1,28 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "pixelplus:sapling_apricorn"
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "stage": {
+      "0": {},
+      "1": {}
+    },
+    "type":{
+      "black": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_black"}},
+      "white": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_white"}},
+      "pink": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_pink"}},
+      "green": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_green"}},
+      "red": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_red"}},
+      "blue": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_blue"}},
+      "yellow": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_yellow"}},
+      "purple": {"textures": {"cross": "pixelplus:blocks/apricorn_sapling_purple"}}
+    }
+  }
+}
