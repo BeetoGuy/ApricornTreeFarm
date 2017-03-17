@@ -87,12 +87,13 @@ public class PixelRegistry
 
     public static void initCrafting()
     {
-        registerAnvilRecipe(new ItemStack(masterball, 1, 0), new ItemStack(masterball, 1, 1));
         registerAnvilCrafting();
         registerAnvilRecipe("ingotAluminum", new ItemStack(Item.REGISTRY.getObject(new ResourceLocation("pixelmon", "aluminium_plate"))));
-        registerPlateSmashing();
+        if (PixConfig.driversExist)
+            registerPlateSmashing();
         boolean steelLoaded = OreDictionary.doesOreNameExist("ingotSteel") && OreDictionary.getOres("ingotSteel").size() > 0;
         if (PixConfig.masterBallCrafting && PixConfig.driversExist) {
+            registerAnvilRecipe(new ItemStack(masterball, 1, 0), new ItemStack(masterball, 1, 1));
             if(steelLoaded) {
                 GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(masterball, 1, 2), "SSS", 'S', "ingotSteel"));
                 registerAnvilRecipe(new ItemStack(masterball, 1, 2), new ItemStack(masterball, 1, 3));
