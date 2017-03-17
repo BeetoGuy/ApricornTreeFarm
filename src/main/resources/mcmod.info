@@ -1,7 +1,7 @@
 [
 {
-  "modid": "pixelplus",
-  "name": "Pixelmon Plus",
+  "modid": "apritree",
+  "name": "Apricorn Tree Farm",
   "description": "Extra content for Pixelmon.",
   "version": "${version}",
   "mcversion": "${mcversion}",

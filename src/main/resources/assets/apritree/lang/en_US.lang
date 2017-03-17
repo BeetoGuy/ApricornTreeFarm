@@ -1,0 +1,45 @@
+item.apritree:apricorn.0.name=Purple Apricorn
+item.apritree:apricorn.1.name=Cooked Purple Apricorn
+item.apritree:masterball_parts.0.name=Masterball Disc
+item.apritree:masterball_parts.1.name=Masterball Lid
+item.apritree:masterball_parts.2.name=Steel Disc
+item.apritree:masterball_parts.3.name=Steel Base
+
+tile.apritree:apricorn_sapling.0.name=Black Apricorn Sapling
+tile.apritree:apricorn_sapling.1.name=White Apricorn Sapling
+tile.apritree:apricorn_sapling.2.name=Pink Apricorn Sapling
+tile.apritree:apricorn_sapling.3.name=Green Apricorn Sapling
+tile.apritree:apricorn_sapling.4.name=Blue Apricorn Sapling
+tile.apritree:apricorn_sapling.5.name=Yellow Apricorn Sapling
+tile.apritree:apricorn_sapling.6.name=Red Apricorn Sapling
+tile.apritree:apricorn_sapling.7.name=Purple Apricorn Sapling
+tile.apritree:apricorn_leaf_first.0.name=Black Apricorn Leaves
+tile.apritree:apricorn_leaf_first.1.name=White Apricorn Leaves
+tile.apritree:apricorn_leaf_first.2.name=Pink Apricorn Leaves
+tile.apritree:apricorn_leaf_first.3.name=Green Apricorn Leaves
+tile.apritree:apricorn_leaf_second.0.name=Blue Apricorn Leaves
+tile.apritree:apricorn_leaf_second.1.name=Yellow Apricorn Leaves
+tile.apritree:apricorn_leaf_second.2.name=Red Apricorn Leaves
+tile.apritree:apricorn_leaf_second.3.name=Purple Apricorn Leaves
+tile.apritree:apricorn_one.0.name=Black Apricorn
+tile.apritree:apricorn_one.1.name=White Apricorn
+tile.apritree:apricorn_one.2.name=Pink Apricorn
+tile.apritree:apricorn_one.3.name=Green Apricorn
+tile.apritree:apricorn_two.0.name=Blue Apricorn
+tile.apritree:apricorn_two.1.name=Yellow Apricorn
+tile.apritree:apricorn_two.2.name=Red Apricorn
+tile.apritree:apricorn_two.3.name=Purple Apricorn
+tile.apritree:mechanical_driver.name=Mechanical Driver Anvil
+tile.apritree:electric_driver.name=Electric Driver Anvil
+tile.apritree:energetic_driver.name=Energetic Driver Anvil
+
+energy.unit.rf=RF
+energy.unit.tesla=Tesla/RF
+energy.unit.eu=EU
+energy.unit.mechanical=Mech Power
+
+inv.electric.driver=Electric Driver Anvil
+inv.energetic.driver=Energetic Driver Anvil
+inv.mechanical.driver=Mechanical Driver Anvil
+
+apritree.recipe.driver=Driver Anvil
