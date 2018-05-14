@@ -8,6 +8,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -69,7 +70,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     }
 
     @Override
-    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighbor)
+    public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighbor, BlockPos neighborPos)
     {
         Block blockAbove = world.getBlockState(pos.up()).getBlock();
         if(!(blockAbove instanceof BlockLeaves))
@@ -99,7 +100,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if(!world.isRemote)
         {
@@ -114,10 +115,9 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     }
 
     @Override
-    @Nullable
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return state.getValue(STAGE) == 3 ? getApricorn(state) : null;
+        return state.getValue(STAGE) == 3 ? getApricorn(state) : Items.AIR;
     }
 
     @Override

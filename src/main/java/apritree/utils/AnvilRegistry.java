@@ -28,10 +28,10 @@ public class AnvilRegistry
 
     public boolean inputExists(ItemStack input)
     {
-        if (input == null) return false;
+        if (input.isEmpty()) return false;
         for(AdvAnvilCrafting craft : crafting)
         {
-            if(craft.getOreInput() != null)
+            if(!craft.getOreInput().isEmpty())
             {
                 for(ItemStack stack : craft.getOreInput())
                     if(matches(stack, input))
@@ -47,7 +47,7 @@ public class AnvilRegistry
     {
         for(AdvAnvilCrafting craft : crafting)
         {
-            if(craft.getOreInput() != null)
+            if(!craft.getOreInput().isEmpty())
             {
                 for(ItemStack stack : craft.getOreInput())
                     if(matches(stack, input))
@@ -56,7 +56,7 @@ public class AnvilRegistry
             else if(matches(craft.getInput(), input))
                 return craft.getOutput();
         }
-        return null;
+        return ItemStack.EMPTY;
     }
 
     public List<AdvAnvilCrafting> getCraftingRecipes()
@@ -66,7 +66,7 @@ public class AnvilRegistry
 
     private boolean matches(ItemStack first, ItemStack second)
     {
-        if(first == null || second == null)
+        if(first.isEmpty() || second.isEmpty())
             return false;
         return first.getItem() == second.getItem() && first.getItemDamage() == second.getItemDamage();
     }

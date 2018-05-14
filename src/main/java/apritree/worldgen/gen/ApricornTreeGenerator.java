@@ -8,17 +8,14 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import apritree.ApriRegistry;
 import apritree.block.BlockApricornSapling;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class ApricornTreeGenerator implements IWorldGenerator {
     public static ApricornTreeGenerator INSTANCE = new ApricornTreeGenerator();
@@ -51,7 +48,7 @@ public class ApricornTreeGenerator implements IWorldGenerator {
             } else {
                 for (int i = 0; i < saplings.length; i++) {
                     Biome biome = world.getBiome(pos);
-                    BiomeDictionary.Type[] types = BiomeDictionary.getTypesForBiome(biome);
+                    Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(biome);
                     for (BiomeDictionary.Type type : types) {
                         if (Arrays.asList(saplings[i].getValue(BlockApricornSapling.APRICORNS).getBiomeTypes()).contains(type)) {
                             states.add(saplings[i]);

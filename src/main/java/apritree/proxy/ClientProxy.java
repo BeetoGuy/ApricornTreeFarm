@@ -15,30 +15,29 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.Loader;
 import apritree.ApriRegistry;
 import apritree.block.BlockApricornLeafOne;
 import apritree.block.BlockApricornLeafTwo;
 import apritree.block.BlockApricornPlant;
 import apritree.utils.ColorUtil;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+@Mod.EventBusSubscriber(modid = "apritree", value = Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
-    @Override
-    public void registerRendering()
+    @SubscribeEvent
+    public static void registerRendering(ModelRegistryEvent evt)
     {
         String[] variants = {"black", "white", "pink", "green", "blue", "yellow", "red", "purple"};
         registerSaplingModel("apritree:apricorn_sapling", ApriRegistry.apricornSapling, variants);
-        variants = new String[]{"active=false,facing=north"};
-        if(Loader.isModLoaded("betterwithmods"))
-            registerBlockModel("apritree:mech_driver", ApriRegistry.mechanicalDriver, variants);
-        if(Loader.isModLoaded("IC2"))
-            registerBlockModel("apritree:electric_driver", ApriRegistry.electricDriver, variants);
-        registerBlockModel("apritree:energetic_driver", ApriRegistry.energeticDriver, variants);
         variants = new String[]{"check_decay=true,decayable=false,type=black", "check_decay=true,decayable=false,type=white", "check_decay=true,decayable=false,type=pink", "check_decay=true,decayable=false,type=green"};
         registerBlockModel("apritree:apricorn_leaf_one", ApriRegistry.apricornLeafOne, variants);
         variants = new String[]{"check_decay=true,decayable=false,type=blue", "check_decay=true,decayable=false,type=yellow", "check_decay=true,decayable=false,type=red", "check_decay=true,decayable=false,type=purple"};
@@ -49,7 +48,7 @@ public class ClientProxy extends CommonProxy
         registerItemModel(ApriRegistry.masterball, 1, "apritree:masterball_lid");
         registerItemModel(ApriRegistry.masterball, 2, "apritree:steel_disc");
         registerItemModel(ApriRegistry.masterball, 3, "apritree:steel_base");
-
+        registerItemModel(ApriRegistry.ball_mold, OreDictionary.WILDCARD_VALUE, "apritree:ball_mold");
     }
 
     @Override
@@ -91,7 +90,7 @@ public class ClientProxy extends CommonProxy
         final ItemColors itCol = Minecraft.getMinecraft().getItemColors();
         itCol.registerItemColorHandler(new IItemColor() {
             @Override
-            public int getColorFromItemstack(ItemStack stack, int tintIndex) {
+            public int colorMultiplier(ItemStack stack, int tintIndex) {
                 if(tintIndex > -1 && stack.getItem() instanceof ItemBlock)
                 {
                     Block block = ((ItemBlock)stack.getItem()).getBlock();
@@ -112,7 +111,7 @@ public class ClientProxy extends CommonProxy
         }, new Block[] {ApriRegistry.apricornLeafOne, ApriRegistry.apricornLeafTwo});
         itCol.registerItemColorHandler(new IItemColor() {
             @Override
-            public int getColorFromItemstack(ItemStack stack, int tintIndex)
+            public int colorMultiplier(ItemStack stack, int tintIndex)
             {
                 if(tintIndex > -1 && stack.getItem() instanceof ItemBlock)
                 {
@@ -125,20 +124,23 @@ public class ClientProxy extends CommonProxy
         }, new Block[] {ApriRegistry.apricornOne, ApriRegistry.apricornTwo});
     }
 
-    public void registerSaplingModel(String location, @Nonnull Block block, String... variants)
+    public static void registerSaplingModel(String location, @Nonnull Block block, String... variants)
     {
         for(int i = 0; i < variants.length; i++)
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), i, new ModelResourceLocation(location + "_" + variants[i], "inventory"));
     }
 
-    public void registerBlockModel(String location, @Nonnull Block block, String... variants)
+    public static void registerBlockModel(String location, @Nonnull Block block, String... variants)
     {
         for(int i = 0; i < variants.length; i++)
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), i, new ModelResourceLocation(location, variants[i]));
     }
 
-    public void registerItemModel(Item item, int meta, String location)
+    public static void registerItemModel(Item item, int meta, String location)
     {
-        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(location, "inventory"));
+        if (meta == OreDictionary.WILDCARD_VALUE)
+            ModelLoader.setCustomMeshDefinition(item, stack -> new ModelResourceLocation(location, "inventory"));
+        else
+            ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(location, "inventory"));
     }
 }

@@ -4,6 +4,7 @@ import com.pixelmonmod.pixelmon.config.PixelmonCreativeTabs;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -22,11 +23,12 @@ public class ItemMasterballParts extends Item
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void getSubItems(Item item, CreativeTabs tab, List list)
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list)
     {
+        if (tab == this.getCreativeTab())
         for(int i = 0; i < 4; i++)
         {
-            list.add(new ItemStack(item, 1, i));
+            list.add(new ItemStack(this, 1, i));
         }
     }
 

@@ -18,7 +18,7 @@ public class PixelNetwork extends NetWrapper
 
     public void init()
     {
-        this.registerClientPacket(DriverUpdatePacket.class);
+
     }
 
     public static void sendToAll(AbstractPacket pkt)
@@ -54,7 +54,7 @@ public class PixelNetwork extends NetWrapper
             if(!(player instanceof EntityPlayerMP))
                 continue;
             EntityPlayerMP playerMP = (EntityPlayerMP)player;
-            if(world.getPlayerChunkMap().isPlayerWatchingChunk(playerMP, chunk.xPosition, chunk.zPosition))
+            if(world.getPlayerChunkMap().isPlayerWatchingChunk(playerMP, chunk.x, chunk.z))
                 PixelNetwork.sendTo(pkt, playerMP);
         }
     }

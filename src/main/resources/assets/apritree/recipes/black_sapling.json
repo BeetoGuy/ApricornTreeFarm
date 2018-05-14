@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "apritree:apricorn_sapling",
+    "data": 0,
+    "count": 1
+  },
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "ore": "treeSapling",
+      "type": "forge:ore_dict"
+    },
+    {
+      "item": "pixelmon:black_apricorn"
+    },
+    {
+      "item": "pixelmon:black_apricorn"
+    },
+    {
+      "item": "pixelmon:black_apricorn"
+    }
+  ]
+}

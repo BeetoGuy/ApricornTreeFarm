@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -110,7 +111,7 @@ public class BlockApricornLeafTwo extends BlockLeaves
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void getSubBlocks(Item item, CreativeTabs tab, List<ItemStack> list)
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {
         for(int i = 0; i < 4; i++)
         {
@@ -135,7 +136,7 @@ public class BlockApricornLeafTwo extends BlockLeaves
 
     public boolean canHybridize(World world, BlockPos pos, IBlockState state)
     {
-        if (!ApriConfig.masterBallCrafting || !ApriConfig.driversExist) return false;
+        if (!ApriConfig.masterBallCrafting) return false;
         EnumApricorns apricornType = state.getValue(APRICORNS);
         if(apricornType == EnumApricorns.RED || apricornType == EnumApricorns.BLUE) {
             for (int x = -4; x < 5; x++) {
@@ -157,7 +158,6 @@ public class BlockApricornLeafTwo extends BlockLeaves
     }
 
     @Override
-    @Nullable
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
         return Item.getItemFromBlock(ApriRegistry.apricornSapling);

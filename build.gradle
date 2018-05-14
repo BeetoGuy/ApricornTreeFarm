@@ -1,35 +1,38 @@
-
-// For those who want the bleeding edge
 buildscript {
     repositories {
         jcenter()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
+        maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-/*
-// for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
-plugins {
-    id "net.minecraftforge.gradle.forge" version "2.0.2"
+
+version = "1.12.2-1.1.0"
+group = "apritreefarm" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "apritree"
+
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
 }
-*/
-version = "1.0.0-1.10.2"
-group= "pixelplus" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "Pixel Plus"
 
 minecraft {
-    version = "1.10.2-12.18.3.2185"
+    version = "1.12.2-14.23.3.2655"
     runDir = "run"
-    mappings = "stable_29"
+    mappings = "snapshot_20171003"
+	useDepAts = true
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
+
 repositories {
+	maven {
+		name = "CoFH Maven"
+		url = "http://maven.covers1624.net"
+	}
     maven {
         name 'DVS1 Maven FS'
         url 'http://dvs1.progwml6.com/files/maven'
@@ -39,19 +42,14 @@ repositories {
         url "http://blamejared.com/maven"
     }
 }
-dependencies {
-    deobfCompile "mezz.jei:jei_1.10.2:+"
-    deobfCompile "slimeknights.mantle:Mantle:1.10.2+"
-    deobfCompile "slimeknights:TConstruct:1.10.2+"
 
-    deobfCompile "MineTweaker3:MineTweaker3-API:3.0.14.5"
-    deobfCompile "com.blamejared:MTLib:1.0.0.7"
-    runtime "MineTweaker3:MineTweaker3-MC1102-Main:3.0.14.5"
-    deobfCompile "blusunrize:ImmersiveEngineering:0.10-50-+"
+dependencies {
+    deobfCompile "blusunrize:ImmersiveEngineering:+"
+	deobfCompile "cofh:RedstoneFlux:1.12-2.0.1.2:universal"
+
 }
 
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -64,7 +62,7 @@ processResources
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
-    // copy everything else, thats not the mcmod.info
+    // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
