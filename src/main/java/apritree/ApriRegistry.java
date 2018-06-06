@@ -1,11 +1,9 @@
 package apritree;
 
-import apritree.compat.ImmersiveEngineering;
+import apritree.compat.ie.ImmersiveEngineering;
 import com.google.common.collect.Lists;
-import com.pixelmonmod.pixelmon.blocks.tileEntities.TileEntityMechanicalAnvil;
 import com.pixelmonmod.pixelmon.config.PixelmonCreativeTabs;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -16,16 +14,12 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 import apritree.block.*;
 import apritree.config.ApriConfig;
 import apritree.item.ItemApricorn;
 import apritree.item.ItemMasterballParts;
 import apritree.utils.AnvilRegistry;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = "apritree")
@@ -38,6 +32,7 @@ public class ApriRegistry
     public static Block apricornOne = new BlockApricornComplex().setRegistryName("apricorn_one");
     public static Block apricornTwo = new BlockApricornPrimary().setRegistryName("apricorn_two");
     public static Block apricornSapling = new BlockApricornSapling().setRegistryName("apricorn_sapling");
+    public static Block berryPlaceholder = new BlockBerryPlaceholder();
 
     public static Item apricorn = new ItemApricorn().setRegistryName("apricorn");
     public static Item masterball = new ItemMasterballParts().setRegistryName("masterball_parts");
@@ -53,6 +48,9 @@ public class ApriRegistry
         registerItem(apricorn);
         registerItem(masterball);
         registerItem(ball_mold);
+        if (Loader.isModLoaded("immersiveengineering")) {
+            registerBlock(berryPlaceholder, null);
+        }
     }
 
     public static void initCrafting()

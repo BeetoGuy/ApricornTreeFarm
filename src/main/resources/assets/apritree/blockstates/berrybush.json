@@ -1,0 +1,42 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "dirt": "blocks/dirt",
+      "stem": "blocks/concrete_green",
+      "leaf": "apritree:blocks/leaves",
+      "log": "blocks/log_oak",
+      "berry": "blocks/concrete_white",
+      "particle": "#leaf"
+    },
+    "model": "apritree:berry_fruits"
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "age": {
+      "0": {
+        "model": "apritree:berry_planted"
+      },
+      "1": {
+        "textures": {"leaf": "apritree:blocks/leaves_small"},
+        "model": "apritree:berry_sprout"
+      },
+      "2": {
+        "model": "apritree:berry_sapling"
+      },
+      "3": {
+        "model": "apritree:berry_grown"
+      },
+      "4": {
+        "textures": {"leaf": "apritree:blocks/leaves_flowering"},
+        "model": "apritree:berry_grown"
+      },
+      "5": {}
+    }
+  }
+}
