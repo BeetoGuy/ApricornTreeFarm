@@ -67,7 +67,7 @@ public class BlockApricornSapling extends BlockBush implements IGrowable
 
     public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
-        if (((Integer)state.getValue(STAGE)).intValue() == 0)
+        if (state.getValue(STAGE) == 0)
         {
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
         }

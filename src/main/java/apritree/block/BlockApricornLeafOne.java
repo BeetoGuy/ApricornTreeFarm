@@ -73,7 +73,7 @@ public class BlockApricornLeafOne extends BlockLeaves
         if(!world.isRemote)
         {
             Block below = world.getBlockState(pos.down()).getBlock();
-            if(below.isAir(world.getBlockState(pos.down()), world, pos) || below.isReplaceable(world, pos.down()))
+            if(below.isAir(world.getBlockState(pos.down()), world, pos.down()) || below.isReplaceable(world, pos.down()))
             {
                 if(rand.nextInt(30) == 0) {
                     world.setBlockState(pos.down(), ApriRegistry.apricornOne.getDefaultState().withProperty(BlockApricornComplex.APRICORNS, state.getValue(APRICORNS)));
@@ -89,7 +89,7 @@ public class BlockApricornLeafOne extends BlockLeaves
     {
         if(world.rand.nextInt(chance) == 0)
         {
-            spawnAsEntity(world, pos, new ItemStack(getApricorn(state)));//dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
+            spawnAsEntity(world, pos, new ItemStack(getApricorn(state)));
         }
     }
 

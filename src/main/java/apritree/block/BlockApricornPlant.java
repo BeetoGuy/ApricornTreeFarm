@@ -24,12 +24,15 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.util.Random;
 
 public abstract class BlockApricornPlant extends Block implements IPlantable, IGrowable
 {
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 3);
+    private static final AxisAlignedBB STAGE_0 = new AxisAlignedBB(0.4375F, 0.8125F, 0.4375F, 0.5625F, 0.9375F, 0.5625F);
+    private static final AxisAlignedBB STAGE_1 = new AxisAlignedBB(0.375F, 0.75F - 0.0625F, 0.375F, 0.625F, 0.9375F, 0.625F);
+    private static final AxisAlignedBB STAGE_2 = new AxisAlignedBB(0.3125F, 0.625F - 0.0625F, 0.3125F, 0.6875F, 0.9375F, 0.6875F);
+    private static final AxisAlignedBB STAGE_3 = new AxisAlignedBB(0.25F, 0.5F - 0.0625F, 0.25F, 0.75F, 0.9375F, 0.75F);
 
     public BlockApricornPlant()
     {
@@ -55,10 +58,10 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     {
         switch(state.getValue(STAGE))
         {
-            case 1: return new AxisAlignedBB(0.375F, 0.75F - 0.0625F, 0.375F, 0.625F, 0.9375F, 0.625F);
-            case 2: return new AxisAlignedBB(0.3125F, 0.625F - 0.0625F, 0.3125F, 0.6875F, 0.9375F, 0.6875F);
-            case 3: return new AxisAlignedBB(0.25F, 0.5F - 0.0625F, 0.25F, 0.75F, 0.9375F, 0.75F);
-            default: return new AxisAlignedBB(0.4375F, 0.8125F, 0.4375F, 0.5625F, 0.9375F, 0.5625F);
+            case 1: return STAGE_1;
+            case 2: return STAGE_2;
+            case 3: return STAGE_3;
+            default: return STAGE_0;
         }
     }
 
@@ -84,17 +87,17 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
     {
-        if(!world.isRemote)
-        {
-            if(rand.nextInt(30) == 0)
-            {
-                if(state.getValue(STAGE) < 3)
-                    world.setBlockState(pos, state.withProperty(STAGE, state.getValue(STAGE) + 1));
-                else
-                {
-                    dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
-                    world.setBlockToAir(pos);
-                }
+        apricornHarvest(world, pos, state, rand, 30);
+    }
+
+    public void apricornHarvest(World world, BlockPos pos, IBlockState state, Random rand, int chance) {
+        if(rand.nextInt(chance) == 0) {
+            if(state.getValue(STAGE) < 3)
+                world.setBlockState(pos, state.cycleProperty(STAGE));
+                //world.setBlockState(pos, state.withProperty(STAGE, state.getValue(STAGE) + 1));
+            else {
+                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
+                world.setBlockToAir(pos);
             }
         }
     }
@@ -102,14 +105,12 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
     {
-        if(!world.isRemote)
-        {
-            if(state.getValue(STAGE) == 3)
-            {
+        if (state.getValue(STAGE) == 3) {
+            if (!world.isRemote) {
                 dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
                 world.setBlockToAir(pos);
-                return true;
             }
+            return true;
         }
         return false;
     }
@@ -130,7 +131,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
 
     public abstract Item getApricorn(IBlockState state);
 
-    public void dropApricorn(World world, double x, double y, double z, ItemStack stack)
+    public static void dropApricorn(World world, double x, double y, double z, ItemStack stack)
     {
         EntityItem item = new EntityItem(world, x, y, z, stack);
 

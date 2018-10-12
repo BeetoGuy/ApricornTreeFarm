@@ -80,7 +80,7 @@ public class BlockApricornLeafTwo extends BlockLeaves
         if(!world.isRemote)
         {
             Block below = world.getBlockState(pos.down()).getBlock();
-            if(below.isAir(world.getBlockState(pos.down()), world, pos) || below.isReplaceable(world, pos.down()))
+            if(below.isAir(world.getBlockState(pos.down()), world, pos.down()) || below.isReplaceable(world, pos.down()))
             {
                 int chance = state.getValue(APRICORNS) == EnumApricorns.PURPLE ? 151 : 30;
                 if(rand.nextInt(chance) == 0) {
@@ -90,7 +90,7 @@ public class BlockApricornLeafTwo extends BlockLeaves
                 }
                 else if(canHybridize(world, pos, state))
                 {
-                    if(rand.nextInt(802) == 0) {
+                    if(rand.nextInt(807) == 0) {
                         world.setBlockState(pos.down(), ApriRegistry.apricornTwo.getDefaultState().withProperty(BlockApricornPrimary.APRICORNS, EnumApricorns.PURPLE));
                         if (!state.getValue(DECAYABLE))
                             world.setBlockState(pos, state.withProperty(DECAYABLE, true));
@@ -105,7 +105,7 @@ public class BlockApricornLeafTwo extends BlockLeaves
     {
         if(world.rand.nextInt(chance) == 0 && state.getValue(APRICORNS) != EnumApricorns.PURPLE)
         {
-            spawnAsEntity(world, pos, new ItemStack(getApricorn(state)));//dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
+            spawnAsEntity(world, pos, new ItemStack(getApricorn(state)));
         }
     }
 

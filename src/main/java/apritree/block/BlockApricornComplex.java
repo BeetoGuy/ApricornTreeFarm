@@ -1,6 +1,5 @@
 package apritree.block;
 
-import com.google.common.base.Predicate;
 import com.pixelmonmod.pixelmon.config.PixelmonItemsApricorns;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -9,20 +8,14 @@ import net.minecraft.item.Item;
 
 public class BlockApricornComplex extends BlockApricornPlant
 {
-    public static final PropertyEnum<EnumApricorns> APRICORNS = PropertyEnum.create("type", EnumApricorns.class, new Predicate<EnumApricorns>()
-    {
-        @Override
-        public boolean apply(EnumApricorns apricorns)
-        {
-            return apricorns.getMeta() < 4;
-        }
-    });
+    public static final PropertyEnum<EnumApricorns> APRICORNS = PropertyEnum.create("type", EnumApricorns.class, a -> a.getMeta() < 4);
 
     public BlockApricornComplex()
     {
         super();
         this.setUnlocalizedName("apritree:apricorn_one");
         this.setDefaultState(this.blockState.getBaseState().withProperty(APRICORNS, EnumApricorns.BLACK).withProperty(STAGE, 0));
+        this.setTickRandomly(true);
     }
 
     @Override
