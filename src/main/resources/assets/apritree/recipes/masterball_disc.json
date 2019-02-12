@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "masterball_crafting"
+    }
+  ],
+  "result": {
+    "item": "apritree:masterball_parts",
+    "data": 0
+  },
+  "pattern": [
+    "PXP"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "X": {
+      "item": "apritree:apricorn",
+      "data": 1
+    },
+    "P": {
+      "item": "pixelmon:cooked_pink_apricorn"
+    }
+  }
+}

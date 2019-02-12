@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "apritree:apricorn_planks",
+    "data": 1,
+    "count": 4
+  },
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "apritree:apricorn_log_one",
+      "data": 1
+    }
+  ]
+}

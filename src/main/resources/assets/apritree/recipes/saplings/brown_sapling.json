@@ -1,0 +1,26 @@
+{
+  "result": {
+    "item": "apritree:apricorn_sapling_cultivated",
+    "data": 4,
+    "count": 1
+  },
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "ore": "treeSapling",
+      "type": "forge:ore_dict"
+    },
+    {
+      "item": "apritree:apricorn",
+      "data": 8
+    },
+    {
+      "item": "apritree:apricorn",
+      "data": 8
+    },
+    {
+      "item": "apritree:apricorn",
+      "data": 8
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "apritree:blocks/log_ultra_top",
+    "side": "apritree:blocks/log_ultra"
+  }
+}

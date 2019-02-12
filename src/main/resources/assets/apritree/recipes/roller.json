@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "apritree:machine",
+    "data": 0
+  },
+  "pattern": [
+    "AAA",
+    "AnA",
+    "ARA"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "ore": "ingotAluminum",
+      "type": "forge:ore_dict"
+    },
+    "R": {
+      "ore": "dustRedstone",
+      "type": "forge:ore_dict"
+    },
+    "n": {
+      "item": "pixelmon:mechanical_anvil"
+    }
+  }
+}

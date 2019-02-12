@@ -1,0 +1,24 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "apritree:sapling_apricorn"
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "stage": {
+      "0": {},
+      "1": {}
+    },
+    "type":{
+      "gilded": {"textures": {"cross": "apritree:blocks/apricorn_sapling_black"}},
+      "dark": {"textures": {"cross": "apritree:blocks/apricorn_sapling_green"}},
+      "spotted": {"textures": {"cross": "apritree:blocks/apricorn_sapling_red"}},
+      "striped": {"textures": {"cross": "apritree:blocks/apricorn_sapling_lime"}}
+    }
+  }
+}

@@ -1,13 +1,13 @@
 package apritree.utils;
 
+import com.google.common.collect.Lists;
 import net.minecraft.item.ItemStack;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AnvilRegistry
 {
-    private static List<AdvAnvilCrafting> crafting = new ArrayList<AdvAnvilCrafting>();
+    private static List<AdvAnvilCrafting> crafting = Lists.newArrayList();
 
     private static AnvilRegistry instance = new AnvilRegistry();
 

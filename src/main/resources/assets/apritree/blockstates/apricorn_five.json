@@ -1,0 +1,40 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "bottom": "apritree:blocks/apricorn_bottom_gilded",
+      "top": "apritree:blocks/apricorn_top_gilded",
+      "side": "apritree:blocks/apricorn_side",
+      "overlay": "apritree:blocks/apricorn_overlay",
+      "particle": "#bottom"
+    },
+    "model": "apritree:apricorn_stage_three"
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [{
+      "transform": "forge:default-block"
+    }],
+    "type": {
+      "gilded": {},
+      "dark": {"textures": {
+        "bottom": "apritree:blocks/apricorn_bottom_dark",
+        "side": "apritree:blocks/apricorn_side_dark"
+      }},
+      "spotted": {"textures": {
+        "bottom": "apritree:blocks/apricorn_bottom_spotted",
+        "side": "apritree:blocks/apricorn_side_spotted"
+      }},
+      "striped": {"textures": {
+        "bottom": "apritree:blocks/apricorn_bottom_striped",
+        "side": "apritree:blocks/apricorn_side_striped"
+      }}
+    },
+    "stage": {
+      "0": {"model": "apritree:apricorn_stage_zero"},
+      "1": {"model": "apritree:apricorn_stage_one"},
+      "2": {"model": "apritree:apricorn_stage_two"},
+      "3": {}
+    }
+  }
+}

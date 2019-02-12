@@ -1,0 +1,9 @@
+{
+  "type": "apritree:apricorn_cracking",
+  "apricorn": {
+    "item": "pixelmon:cooked_white_apricorn"
+  },
+  "result": {
+    "item": "pixelmon:fast_ball_disc"
+  }
+}

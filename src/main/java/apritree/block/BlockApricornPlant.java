@@ -79,7 +79,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
         if(!(blockAbove instanceof BlockLeaves))
         {
             if(state.getValue(STAGE) == 3)
-                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
+                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, getApricorn(state).copy());
             world.setBlockToAir(pos);
         }
     }
@@ -96,7 +96,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
                 world.setBlockState(pos, state.cycleProperty(STAGE));
                 //world.setBlockState(pos, state.withProperty(STAGE, state.getValue(STAGE) + 1));
             else {
-                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
+                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, getApricorn(state).copy());
                 world.setBlockToAir(pos);
             }
         }
@@ -107,7 +107,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     {
         if (state.getValue(STAGE) == 3) {
             if (!world.isRemote) {
-                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, new ItemStack(getApricorn(state)));
+                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, getApricorn(state).copy());
                 world.setBlockToAir(pos);
             }
             return true;
@@ -118,18 +118,18 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return state.getValue(STAGE) == 3 ? getApricorn(state) : Items.AIR;
+        return state.getValue(STAGE) == 3 ? getApricorn(state).getItem() : Items.AIR;
     }
 
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
     {
-        return new ItemStack(getApricorn(state));
+        return getApricorn(state);
     }
 
-    public abstract EnumApricorns getEnumApricorn(IBlockState state);
+    public abstract ItemStack getApricorn(IBlockState state);
 
-    public abstract Item getApricorn(IBlockState state);
+    public abstract EnumApricorns getEnumApricorn(IBlockState state);
 
     public static void dropApricorn(World world, double x, double y, double z, ItemStack stack)
     {

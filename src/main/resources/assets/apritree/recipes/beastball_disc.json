@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "beastball_crafting"
+    }
+  ],
+  "result": {
+    "item": "apritree:masterball_parts",
+    "data": 4
+  },
+  "pattern": [
+    "YXY"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "X": {
+      "item": "apritree:apricorn",
+      "data": 3
+    },
+    "Y": {
+      "item": "pixelmon:cooked_yellow_apricorn"
+    }
+  }
+}

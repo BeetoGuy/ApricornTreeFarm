@@ -1,0 +1,10 @@
+{
+  "type": "apritree:apricorn_cracking",
+  "apricorn": {
+    "item": "apritree:apricorn",
+    "data": 25
+  },
+  "result": {
+    "item": "pixelmon:dusk_ball_disc"
+  }
+}

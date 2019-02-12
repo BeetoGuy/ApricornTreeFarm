@@ -1,0 +1,29 @@
+{
+  "result": {
+    "item": "apritree:machine",
+    "data": 4
+  },
+  "pattern": [
+    "AAA",
+    "GFG",
+    "ARA"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "ore": "ingotAluminum",
+      "type": "forge:ore_dict"
+    },
+    "R": {
+      "ore": "dustRedstone",
+      "type": "forge:ore_dict"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "G": {
+      "ore": "ingotGold",
+      "type": "forge:ore_dict"
+    }
+  }
+}

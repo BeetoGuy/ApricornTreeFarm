@@ -1,7 +1,8 @@
 package apritree.compat.enderio;
 
-import apritree.ApriRegistry;
+import apritree.block.BlockApriLeafBase;
 import apritree.block.BlockApricornPlant;
+import apritree.block.EnumApricorns;
 import crazypants.enderio.api.farm.AbstractFarmerJoe;
 import crazypants.enderio.api.farm.IFarmer;
 import crazypants.enderio.api.farm.IHarvestResult;
@@ -53,11 +54,11 @@ public class EIOApriFarmer extends AbstractFarmerJoe {
                     BlockPos off = pos.offset(facing);
                     if (world.isBlockLoaded(off)) {
                         Block block = world.getBlockState(off).getBlock();
-                        if (block == ApriRegistry.apricornLeafOne || block == ApriRegistry.apricornLeafTwo) {
+                        if (block instanceof BlockApriLeafBase) {
                             foundApricorns = true;
                             for (BlockPos p : BlockPos.getAllInBoxMutable(pos.add(-2, -1, -2), pos.add(2, 0, 2))) {
                                 if (world.isBlockLoaded(p) && canHarvest(farm, p, world.getBlockState(p))) {
-                                    result.getDrops().add(new EntityItem(world, p.getX() + 0.5D, p.getY() + 0.5D, p.getZ() + 0.5D, new ItemStack(((BlockApricornPlant)world.getBlockState(p).getBlock()).getApricorn(world.getBlockState(p)))));
+                                    result.getDrops().add(new EntityItem(world, p.getX() + 0.5D, p.getY() + 0.5D, p.getZ() + 0.5D, EnumApricorns.getApricornFromEnum(((BlockApricornPlant)world.getBlockState(p).getBlock()).getEnumApricorn(world.getBlockState(p))).copy()));
                                     result.getHarvestedBlocks().add(p);
                                 }
                             }

@@ -1,5 +1,6 @@
 package apritree.compat;
 
+import apritree.compat.betterwithmods.BetterWithMods;
 import apritree.compat.enderio.EnderIOHandler;
 import apritree.compat.industforegoing.IndustrialForegoing;
 import net.minecraft.block.Block;
@@ -11,6 +12,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod.EventBusSubscriber(modid = "apritree")
 public class IntegrationHandler {
+    public static void preInit() {
+        if (Loader.isModLoaded("betterwithmods")) {
+            BetterWithMods.preInit();
+        }
+    }
+
     @SubscribeEvent
     public static void registerModSubscriptions(RegistryEvent.Register<Block> evt) {
         if (Loader.isModLoaded("enderio")) {

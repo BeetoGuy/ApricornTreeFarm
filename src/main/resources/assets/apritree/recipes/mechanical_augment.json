@@ -1,0 +1,30 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "betterwithmods"
+    }
+  ],
+  "result": {
+    "item": "apritree:mechanical_augment"
+  },
+  "pattern": [
+    "GIG",
+    "IBI",
+    "GIG"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "G": {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    },
+    "I": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "B": {
+      "item": "betterwithmods:wooden_gearbox"
+    }
+  }
+}

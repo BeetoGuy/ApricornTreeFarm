@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "apritree:blocks/log_ultra"
+  }
+}

@@ -25,7 +25,7 @@ public class ItemApricorn extends Item
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list)
     {
         if (tab == this.getCreativeTab())
-        for(int i = 0; i < 2; i++)
+        for(int i = 0; i < 28; i++)
         {
             list.add(new ItemStack(this, 1, i));
         }

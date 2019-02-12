@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "block/cube_all",
+    "textures": {"all": "apritree:blocks/planks_ultra"}
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [{
+      "transform": "forge:default-block"
+    }]
+  }
+}

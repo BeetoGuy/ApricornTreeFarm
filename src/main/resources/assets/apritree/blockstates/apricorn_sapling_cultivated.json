@@ -1,0 +1,28 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "apritree:sapling_apricorn"
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "stage": {
+      "0": {},
+      "1": {}
+    },
+    "type":{
+      "orange": {"textures": {"cross": "apritree:blocks/apricorn_sapling_orange"}},
+      "cyan": {"textures": {"cross": "apritree:blocks/apricorn_sapling_cyan"}},
+      "gray": {"textures": {"cross": "apritree:blocks/apricorn_sapling_gray"}},
+      "light_gray": {"textures": {"cross": "apritree:blocks/apricorn_sapling_lightgray"}},
+      "brown": {"textures": {"cross": "apritree:blocks/apricorn_sapling_brown"}},
+      "light_blue": {"textures": {"cross": "apritree:blocks/apricorn_sapling_lightblue"}},
+      "lime": {"textures": {"cross": "apritree:blocks/apricorn_sapling_lime"}},
+      "magenta": {"textures": {"cross": "apritree:blocks/apricorn_sapling_magenta"}}
+    }
+  }
+}

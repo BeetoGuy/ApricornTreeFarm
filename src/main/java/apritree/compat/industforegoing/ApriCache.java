@@ -1,6 +1,6 @@
 package apritree.compat.industforegoing;
 
-import apritree.ApriRegistry;
+import apritree.block.BlockApriLeafBase;
 import apritree.block.BlockApricornPlant;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
@@ -55,7 +55,7 @@ public class ApriCache {
                     BlockPos off = pos.offset(facing);
                     if (world.isBlockLoaded(off)) {
                         Block block = world.getBlockState(off).getBlock();
-                        if (block == ApriRegistry.apricornLeafOne || block == ApriRegistry.apricornLeafTwo) {
+                        if (block instanceof BlockApriLeafBase) {
                             isFound = true;
                             isApriTree = true;
                             for (BlockPos p : BlockPos.getAllInBoxMutable(pos.add(-2, -1, -2), pos.add(2, 0, 2))) {

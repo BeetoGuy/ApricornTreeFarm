@@ -1,0 +1,37 @@
+[
+  {
+    "conditions": [
+      {
+        "type": "apriconfig",
+        "enabled": "steeldisc_crafting"
+      }
+    ],
+    "name": "SPECIALDISC",
+    "ingredient": [
+      {
+        "item": "apritree:masterball_parts",
+        "data": 3
+      }
+    ]
+  },
+  {
+    "conditions": [
+      {
+        "type": "forge:not",
+        "value": {
+          "type": "apriconfig",
+          "enabled": "steeldisc_crafting"
+        }
+      }
+    ],
+    "name": "SPECIALDISC",
+    "ingredient": [
+      {
+        "item": "pixelmon:iron_base"
+      },
+      {
+        "item": "pixelmon:aluminum_base"
+      }
+    ]
+  }
+]

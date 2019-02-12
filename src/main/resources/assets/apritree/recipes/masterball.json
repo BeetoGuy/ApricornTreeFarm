@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "masterball_crafting"
+    }
+  ],
+  "result": {
+    "item": "pixelmon:master_ball"
+  },
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "apritree:masterball_parts",
+      "data": 1
+    },
+    {
+      "item": "minecraft:stone_button"
+    },
+    {
+      "item": "#SPECIALDISC"
+    }
+  ]
+}

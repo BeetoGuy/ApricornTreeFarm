@@ -1,0 +1,6 @@
+{
+  "parent": "block/crafting_table",
+  "textures": {
+    "up": "apritree:blocks/apricorn_crafting_top"
+  }
+}

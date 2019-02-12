@@ -17,11 +17,7 @@
       "from": [0, 0, 0],
       "to": [16, 16, 16],
       "faces": {
-        "up": {"texture": "#overlayside"},
-        "north": {"texture": "#overlayfront"},
-        "west":  {"texture": "#overlayside"},
-        "east":  {"texture": "#overlayside"},
-        "south": {"texture": "#overlayside"}
+        "north": {"texture": "#overlayfront"}
       }
     }
   ]

@@ -1,0 +1,21 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "apritree:sapling_apricorn",
+    "textures": {
+      "cross": "apritree:blocks/apricorn_sapling_ultra"
+    }
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "stage": {
+      "0": {},
+      "1": {}
+    }
+  }
+}

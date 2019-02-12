@@ -1,0 +1,8 @@
+{
+  "recipes": {
+    "apricorn_cracking": "apritree.recipe.RecipeApriWorkbench$Factory"
+  },
+  "conditions": {
+    "apriconfig": "apritree.config.ApriConfig$ConditionConfig"
+  }
+}

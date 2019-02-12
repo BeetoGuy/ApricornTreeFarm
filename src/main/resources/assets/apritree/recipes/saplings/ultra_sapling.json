@@ -1,0 +1,32 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "beastball_crafting"
+    }
+  ],
+  "result": {
+    "item": "apritree:apricorn_sapling_ultra",
+    "data": 0,
+    "count": 1
+  },
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "ore": "treeSapling",
+      "type": "forge:ore_dict"
+    },
+    {
+      "item": "apritree:apricorn",
+      "data": 2
+    },
+    {
+      "item": "apritree:apricorn",
+      "data": 2
+    },
+    {
+      "item": "apritree:apricorn",
+      "data": 2
+    }
+  ]
+}

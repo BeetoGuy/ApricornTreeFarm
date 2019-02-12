@@ -1,0 +1,22 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "steeldisc_crafting"
+    }
+  ],
+  "result": {
+    "item": "apritree:masterball_parts",
+    "data": 2
+  },
+  "pattern": [
+    "SSS"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "S": {
+      "ore": "ingotSteel",
+      "type": "forge:ore_dict"
+    }
+  }
+}

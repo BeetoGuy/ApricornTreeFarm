@@ -1,0 +1,32 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "apritree:apricorn_planks"
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "type":{
+      "black": {},
+      "white": {},
+      "pink": {},
+      "green": {},
+      "red": {},
+      "blue": {},
+      "yellow": {},
+      "purple": {},
+      "orange": {},
+      "cyan": {},
+      "gray": {},
+      "light_gray": {},
+      "brown": {},
+      "light_blue": {},
+      "lime": {},
+      "magenta": {}
+    }
+  }
+}

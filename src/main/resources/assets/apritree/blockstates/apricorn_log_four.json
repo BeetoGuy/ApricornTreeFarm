@@ -1,0 +1,37 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "apritree:log",
+    "textures": {
+      "end": "apritree:blocks/top_brown",
+      "side": "blocks/log_spruce"
+    }
+  },
+  "variants": {
+    "normal": [],
+    "inventory": [{
+      "transform": "forge:default-block"
+    }],
+    "type": {
+      "brown": {},
+      "light_blue": {"textures": {
+        "end": "apritree:blocks/top_light_blue",
+        "side": "blocks/log_birch"
+      }},
+      "lime": {"textures": {
+        "end": "apritree:blocks/top_lime",
+        "side": "blocks/log_spruce"
+      }},
+      "magenta": {"textures": {
+        "end": "apritree:blocks/top_magenta",
+        "side": "blocks/log_jungle"
+      }}
+    },
+    "axis": {
+      "x": {"x": 90, "y": 90},
+      "y": {},
+      "z": {"x": 90},
+      "none": {"model": "apritree:bark"}
+    }
+  }
+}
