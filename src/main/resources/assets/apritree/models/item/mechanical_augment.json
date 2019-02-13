@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "betterwithmods:blocks/wooden_gearbox_input"
+    "layer0": "apritree:items/mechanical_augment"
   }
 }

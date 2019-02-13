@@ -23,6 +23,11 @@ public class BlockSpecialPlanks extends Block {
     }
 
     @Override
+    public int damageDropped(IBlockState state) {
+        return state.getValue(APRICORNS).getMeta() - 16;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
         for (int i = 0; i < 5; i++) {

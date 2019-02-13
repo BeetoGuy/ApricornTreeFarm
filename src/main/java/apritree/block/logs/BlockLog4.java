@@ -19,6 +19,12 @@ public class BlockLog4 extends BlockLog {
     }
 
     @Override
+    public int damageDropped(IBlockState state)
+    {
+        return state.getValue(StateLibrary.APRICORNS4).getMeta() - 12;
+    }
+
+    @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list)
     {

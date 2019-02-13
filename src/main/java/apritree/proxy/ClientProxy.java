@@ -83,7 +83,7 @@ public class ClientProxy extends CommonProxy
         registerItemModel(ApriRegistry.ball_mold, OreDictionary.WILDCARD_VALUE, "apritree:ball_mold");
         registerItemModel(ApriRegistry.apricornTool, OreDictionary.WILDCARD_VALUE, "apritree:apricorn_tools");
         if (ApriRegistry.mech_adapter != null)
-            registerItemModel(ApriRegistry.mech_adapter, OreDictionary.WILDCARD_VALUE, "apritree:mech_adapter");
+            registerItemModel(ApriRegistry.mech_adapter, OreDictionary.WILDCARD_VALUE, "apritree:mechanical_augment");
     }
 
     @Override
