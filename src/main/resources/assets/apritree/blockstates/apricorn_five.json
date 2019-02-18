@@ -2,8 +2,8 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "bottom": "apritree:blocks/apricorn_bottom_gilded",
-      "top": "apritree:blocks/apricorn_top_gilded",
+      "bottom": "apritree:blocks/gilded_apricorn_bottom",
+      "top": "apritree:blocks/gilded_apricorn_top",
       "side": "apritree:blocks/apricorn_side",
       "overlay": "apritree:blocks/apricorn_overlay",
       "particle": "#bottom"
@@ -18,16 +18,16 @@
     "type": {
       "gilded": {},
       "dark": {"textures": {
-        "bottom": "apritree:blocks/apricorn_bottom_dark",
-        "side": "apritree:blocks/apricorn_side_dark"
+        "bottom": "apritree:blocks/dark_apricorn_bottom",
+        "side": "apritree:blocks/dark_apricorn_side"
       }},
       "spotted": {"textures": {
-        "bottom": "apritree:blocks/apricorn_bottom_spotted",
-        "side": "apritree:blocks/apricorn_side_spotted"
+        "bottom": "apritree:blocks/spotted_apricorn_bottom",
+        "side": "apritree:blocks/spotted_apricorn_side"
       }},
       "striped": {"textures": {
-        "bottom": "apritree:blocks/apricorn_bottom_striped",
-        "side": "apritree:blocks/apricorn_side_striped"
+        "bottom": "apritree:blocks/striped_apricorn_bottom",
+        "side": "apritree:blocks/striped_apricorn_side"
       }}
     },
     "stage": {

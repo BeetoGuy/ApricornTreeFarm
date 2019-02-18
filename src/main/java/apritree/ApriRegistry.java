@@ -108,24 +108,6 @@ public class ApriRegistry
         registerBlock(apriWorkbench);
         GameRegistry.registerTileEntity(TileEntityRoller.class, new ResourceLocation("apritree", "roller"));
         GameRegistry.registerTileEntity(TileEntityCharger.class, new ResourceLocation("apritree", "charger"));
-        OreDictionary.registerOre("treeLeaves", apricornLeafOne);
-        OreDictionary.registerOre("treeLeaves", apricornLeafTwo);
-        OreDictionary.registerOre("treeLeaves", apricornLeafThree);
-        OreDictionary.registerOre("treeLeaves", apricornLeafFour);
-        OreDictionary.registerOre("treeLeaves", apricornLeafFive);
-        OreDictionary.registerOre("treeLeaves", apricornLeafUltra);
-        OreDictionary.registerOre("treeSapling", apricornSapling);
-        OreDictionary.registerOre("treeSapling", apricornSaplingCultivated);
-        OreDictionary.registerOre("treeSapling", apricornSaplingSpecial);
-        OreDictionary.registerOre("treeSapling", apricornSaplingUltra);
-        OreDictionary.registerOre("logWood", logOne);
-        OreDictionary.registerOre("logWood", logTwo);
-        OreDictionary.registerOre("logWood", logThree);
-        OreDictionary.registerOre("logWood", logFour);
-        OreDictionary.registerOre("logWood", logFive);
-        OreDictionary.registerOre("logWood", ultraLog);
-        OreDictionary.registerOre("plankWood", plankColor);
-        OreDictionary.registerOre("plankWood", plankSpecial);
         registerItem(apricorn);
         registerItem(masterball);
         registerItem(ball_mold);
@@ -181,6 +163,28 @@ public class ApriRegistry
             GameRegistry.addSmelting(new ItemStack(logFive, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
         }
         GameRegistry.addSmelting(new ItemStack(ultraLog), new ItemStack(Items.COAL, 1, 1), 0.1F);
+        registerOre("treeLeaves", apricornLeafOne);
+        registerOre("treeLeaves", apricornLeafTwo);
+        registerOre("treeLeaves", apricornLeafThree);
+        registerOre("treeLeaves", apricornLeafFour);
+        registerOre("treeLeaves", apricornLeafFive);
+        registerOre("treeLeaves", apricornLeafUltra);
+        registerOre("treeSapling", apricornSapling);
+        registerOre("treeSapling", apricornSaplingCultivated);
+        registerOre("treeSapling", apricornSaplingSpecial);
+        registerOre("treeSapling", apricornSaplingUltra);
+        registerOre("logWood", logOne);
+        registerOre("logWood", logTwo);
+        registerOre("logWood", logThree);
+        registerOre("logWood", logFour);
+        registerOre("logWood", logFive);
+        registerOre("logWood", ultraLog);
+        registerOre("plankWood", plankColor);
+        registerOre("plankWood", plankSpecial);
+    }
+
+    private static void registerOre(String name, Block block) {
+        OreDictionary.registerOre(name, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
     }
 
     public static void initAddons() {

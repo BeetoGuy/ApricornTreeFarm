@@ -16,7 +16,7 @@ import apritree.config.ApriConfig;
 import apritree.proxy.CommonProxy;
 import apritree.worldgen.gen.ApricornTreeGenerator;
 
-@Mod(name="Apricorn Tree Farm", modid="apritree", version="2.0.1", dependencies="required-after:pixelmon@[7.0.0,);after:betterwithmods;after:immersiveengineering;after:industrialforegoing")
+@Mod(name="Apricorn Tree Farm", modid="apritree", version="2.0.3", dependencies="required-after:pixelmon@[7.0.0,);after:betterwithmods;after:immersiveengineering;after:industrialforegoing")
 public class ApriTree
 {
     @Mod.Instance("apritree")
