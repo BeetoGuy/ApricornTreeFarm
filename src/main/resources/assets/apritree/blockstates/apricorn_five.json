@@ -3,8 +3,8 @@
   "defaults": {
     "textures": {
       "bottom": "apritree:blocks/gilded_apricorn_bottom",
-      "top": "apritree:blocks/gilded_apricorn_top",
-      "side": "apritree:blocks/apricorn_side",
+      "top": "apritree:blocks/apricorn_top",
+      "side": "apritree:blocks/gilded_apricorn_side",
       "overlay": "apritree:blocks/apricorn_overlay",
       "particle": "#bottom"
     },

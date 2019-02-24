@@ -18,7 +18,7 @@
       "gilded": {"textures": {"cross": "apritree:blocks/apricorn_sapling_black"}},
       "dark": {"textures": {"cross": "apritree:blocks/apricorn_sapling_green"}},
       "spotted": {"textures": {"cross": "apritree:blocks/apricorn_sapling_red"}},
-      "striped": {"textures": {"cross": "apritree:blocks/apricorn_sapling_lime"}}
+      "striped": {"textures": {"cross": "apritree:blocks/apricorn_sapling_blue"}}
     }
   }
 }
