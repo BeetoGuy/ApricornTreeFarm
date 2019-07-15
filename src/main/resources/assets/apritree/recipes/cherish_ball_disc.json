@@ -1,0 +1,25 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "cherish_ball_crafting"
+    }
+  ],
+  "result": {
+    "item": "apritree:masterball_parts",
+    "data": 8
+  },
+  "pattern": [
+    "PXP"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "X": {
+      "item": "apritree:apricorn",
+      "data": 31
+    },
+    "P": {
+      "item": "pixelmon:cooked_black_apricorn"
+    }
+  }
+}

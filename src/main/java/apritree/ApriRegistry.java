@@ -85,23 +85,23 @@ public class ApriRegistry
         registerProduct(apricornLeafThree);
         registerProduct(apricornLeafFour);
         registerProduct(apricornLeafFive);
-        registerBlock(apricornLeafUltra);
+        registerProduct(apricornLeafUltra);
         registerProduct(apricornOne);
         registerProduct(apricornTwo);
         registerProduct(apricornThree);
         registerProduct(apricornFour);
         registerProduct(apricornFive);
-        registerBlock(apricornUltra);
+        registerProduct(apricornUltra);
         registerSapling(apricornSapling);
         registerSapling(apricornSaplingCultivated);
         registerSapling(apricornSaplingSpecial);
-        registerBlock(apricornSaplingUltra);
+        registerSapling(apricornSaplingUltra);
         registerProduct(logOne);
         registerProduct(logTwo);
         registerProduct(logThree);
         registerProduct(logFour);
         registerProduct(logFive);
-        registerBlock(ultraLog);
+        registerProduct(ultraLog);
         registerMetaBlock(plankColor);
         registerMetaBlock(plankSpecial);
         registerMetaBlock(machine);
@@ -121,6 +121,27 @@ public class ApriRegistry
     public static void initCrafting()
     {
         registerAnvilCrafting();
+        if (ApriConfig.gsBallCrafting) {
+            registerAnvilRecipe(new ItemStack(masterball, 1, 6), new ItemStack(masterball, 1, 7));
+            GameRegistry.addSmelting(new ItemStack(apricorn, 1, 28), new ItemStack(apricorn, 1, 29), 0.1F);
+            if (ApriConfig.beastBallCrafting)
+                BreedingRegistry.addApriBreeding(EnumApricorns.ULTRA, EnumApricorns.GILDED, EnumApricorns.GS, 809);
+            else
+                BreedingRegistry.addApriBreeding(EnumApricorns.BROWN, EnumApricorns.GILDED, EnumApricorns.GS, 809);
+        }
+        if (ApriConfig.cherishBallCrafting) {
+            registerAnvilRecipe(new ItemStack(masterball, 1, 8), new ItemStack(masterball, 1, 9));
+            GameRegistry.addSmelting(new ItemStack(apricorn, 1, 30), new ItemStack(apricorn, 1, 31), 0.1F);
+            if (ApriConfig.gsBallCrafting)
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.GS, EnumApricorns.CHERISH, 809);
+            else if (ApriConfig.beastBallCrafting)
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.ULTRA, EnumApricorns.CHERISH, 809);
+            else if (ApriConfig.masterBallCrafting)
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.PURPLE, EnumApricorns.CHERISH, 809);
+            else
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.GILDED, EnumApricorns.CHERISH, 809);
+
+        }
         if (ApriConfig.masterBallCrafting) {
             registerAnvilRecipe(new ItemStack(masterball, 1, 0), new ItemStack(masterball, 1, 1));
             GameRegistry.addSmelting(new ItemStack(apricorn, 1, 0), new ItemStack(apricorn, 1, 1), 0.1F);
@@ -162,7 +183,9 @@ public class ApriRegistry
             GameRegistry.addSmelting(new ItemStack(logFour, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
             GameRegistry.addSmelting(new ItemStack(logFive, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
         }
-        GameRegistry.addSmelting(new ItemStack(ultraLog), new ItemStack(Items.COAL, 1, 1), 0.1F);
+        GameRegistry.addSmelting(new ItemStack(ultraLog, 1, 0), new ItemStack(Items.COAL, 1, 1), 0.1F);
+        GameRegistry.addSmelting(new ItemStack(ultraLog, 1, 1), new ItemStack(Items.COAL, 1, 1), 0.1F);
+        GameRegistry.addSmelting(new ItemStack(ultraLog, 1, 2), new ItemStack(Items.COAL, 1, 1), 0.1F);
         registerOre("treeLeaves", apricornLeafOne);
         registerOre("treeLeaves", apricornLeafTwo);
         registerOre("treeLeaves", apricornLeafThree);
@@ -181,10 +204,15 @@ public class ApriRegistry
         registerOre("logWood", ultraLog);
         registerOre("plankWood", plankColor);
         registerOre("plankWood", plankSpecial);
+        //registerOre("plateAluminum", PixelmonItems.aluminiumPlate);
     }
 
     private static void registerOre(String name, Block block) {
         OreDictionary.registerOre(name, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
+    }
+
+    private static void registerOre(String name, Item item) {
+        OreDictionary.registerOre(name, new ItemStack(item, 1, OreDictionary.WILDCARD_VALUE));
     }
 
     public static void initAddons() {

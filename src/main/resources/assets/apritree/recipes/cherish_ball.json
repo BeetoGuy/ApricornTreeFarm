@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "cherish_ball_crafting"
+    }
+  ],
+  "result": {
+    "item": "pixelmon:cherish_ball"
+  },
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "apritree:masterball_parts",
+      "data": 9
+    },
+    {
+      "item": "minecraft:stone_button"
+    },
+    {
+      "item": "#SPECIALDISC"
+    }
+  ]
+}

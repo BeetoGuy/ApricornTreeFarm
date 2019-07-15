@@ -15,7 +15,9 @@
       "dark": {"textures": {"all": "apritree:blocks/planks_dark"}},
       "spotted": {"textures": {"all": "apritree:blocks/planks_spotted"}},
       "striped": {"textures": {"all": "apritree:blocks/planks_striped"}},
-      "ultra": {"textures": {"all": "apritree:blocks/planks_ultra"}}
+      "ultra": {"textures": {"all": "apritree:blocks/planks_ultra"}},
+      "gs": {"textures": {"all": "apritree:blocks/planks_shiny"}},
+      "cherish": {"textures": {"all": "apritree:blocks/planks_crimson"}}
     }
   }
 }

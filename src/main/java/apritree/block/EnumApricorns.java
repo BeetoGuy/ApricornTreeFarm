@@ -30,7 +30,9 @@ public enum EnumApricorns implements IStringSerializable
     DARK("dark", 17, 0x020202, 30), // Dusk Ball
     SPOTTED("spotted", 18, 0xB70606, 30), //Repeat Ball
     STRIPED("striped", 19, 0x152DDF, 30), //Quick Ball
-    ULTRA("ultra", 20, 0x152DDF, 30); //Beast Ball
+    ULTRA("ultra", 20, 0x152DDF, 30), //Beast Ball
+    GS("gs", 21, 0xD28521, 151), //GS Ball
+    CHERISH("cherish", 22, 0xB70606, 151); //Cherish Ball
 
 
     private String name;
@@ -75,8 +77,8 @@ public enum EnumApricorns implements IStringSerializable
 
     public static IBlockState getApriBlock(EnumApricorns apricorns) {
         int meta = apricorns.getMeta();
-        if (apricorns == ULTRA) {
-            return ApriRegistry.apricornUltra.getDefaultState();
+        if (meta > 19) {
+            return ApriRegistry.apricornUltra.getDefaultState().withProperty(StateLibrary.APRICORNS6, apricorns);
         } else if (meta > 15) {
             return ApriRegistry.apricornFive.getDefaultState().withProperty(StateLibrary.APRICORNS5, apricorns);
         } else if (meta > 11) {
@@ -111,6 +113,8 @@ public enum EnumApricorns implements IStringSerializable
             case DARK: return new ItemStack(ApriRegistry.apricorn, 1, 13);
             case SPOTTED: return new ItemStack(ApriRegistry.apricorn, 1, 14);
             case STRIPED: return new ItemStack(ApriRegistry.apricorn, 1, 15);
+            case GS: return new ItemStack(ApriRegistry.apricorn, 1, 28);
+            case CHERISH: return new ItemStack(ApriRegistry.apricorn, 1, 30);
             default: return new ItemStack(ApriRegistry.apricorn, 1, 2);
         }
     }
@@ -137,6 +141,8 @@ public enum EnumApricorns implements IStringSerializable
             case DARK: return new ItemStack(PixelmonItemsPokeballs.duskBall);
             case SPOTTED: return new ItemStack(PixelmonItemsPokeballs.repeatBall);
             case STRIPED: return new ItemStack(PixelmonItemsPokeballs.quickBall);
+            case GS: return new ItemStack(PixelmonItemsPokeballs.gsBall);
+            case CHERISH: return new ItemStack(PixelmonItemsPokeballs.cherishBall);
             default: return new ItemStack(PixelmonItemsPokeballs.beastBall);
         }
     }
@@ -163,6 +169,8 @@ public enum EnumApricorns implements IStringSerializable
             case DARK: return new ItemStack(PixelmonItemsPokeballs.duskBallDisc);
             case SPOTTED: return new ItemStack(PixelmonItemsPokeballs.repeatBallDisc);
             case STRIPED: return new ItemStack(PixelmonItemsPokeballs.quickBallDisc);
+            case GS: return new ItemStack(ApriRegistry.masterball, 1, 6);
+            case CHERISH: return new ItemStack(ApriRegistry.masterball, 1, 8);
             default: return new ItemStack(ApriRegistry.masterball, 1, 4);
         }
     }
@@ -189,13 +197,15 @@ public enum EnumApricorns implements IStringSerializable
             case DARK: return new ItemStack(PixelmonItemsPokeballs.duskBallLid);
             case SPOTTED: return new ItemStack(PixelmonItemsPokeballs.repeatBallLid);
             case STRIPED: return new ItemStack(PixelmonItemsPokeballs.quickBallLid);
+            case GS: return new ItemStack(ApriRegistry.masterball, 1, 7);
+            case CHERISH: return new ItemStack(ApriRegistry.masterball, 1, 9);
             default: return new ItemStack(ApriRegistry.masterball, 1, 5);
         }
     }
 
     public static EnumApricorns byMeta(int meta)
     {
-        if(meta < 0 || meta > 20)
+        if(meta < 0 || meta > 22)
             return apricorns[0];
         return apricorns[meta];
     }
@@ -208,7 +218,7 @@ public enum EnumApricorns implements IStringSerializable
 
     static
     {
-        apricorns = new EnumApricorns[21];
+        apricorns = new EnumApricorns[23];
         for(EnumApricorns apricorn : EnumApricorns.values())
             apricorns[apricorn.ordinal()] = apricorn;
     }

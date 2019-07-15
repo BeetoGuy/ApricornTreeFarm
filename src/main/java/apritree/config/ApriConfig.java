@@ -18,13 +18,25 @@ public class ApriConfig {
     public static boolean beastBallCrafting;
     public static boolean steelCrafting;
     public static boolean apricornTreeGen;
+    public static boolean shinyGSBall;
+    public static boolean gsBallCrafting;
+    public static boolean perfectCherishBall;
+    public static boolean cherishBallCrafting;
+    public static boolean gen2ShinyBreed;
+    public static boolean dittoLegend3IV;
 
     public static void init(File file) {
         config = new Configuration(file);
         masterBallCrafting = createBooleanProperty(config, "masterball", "_crafting", true, "Allows Purple Apricorns to be grown and harvested for Master Balls.");
         beastBallCrafting = createBooleanProperty(config, "beastball", "_crafting", true, "Allows Ultra Apricorns to be grown and harvested for Beast Balls.");
-        steelCrafting = createBooleanProperty(config, "steeldisc", "_crafting", false, "Master and Beast Balls require steel bases to be crafted.");
+        steelCrafting = createBooleanProperty(config, "steeldisc", "_crafting", false, "Master and Beast Balls (plus GS and Cherish if enabled) require steel bases to be crafted.");
         apricornTreeGen = createBooleanProperty(config, "generate_trees", "_worldgen", true, "If enabled, Apricorn trees will generate with the world.");
+        shinyGSBall = createBooleanProperty(config, "shiny_gs_ball", "_catching", false, "If enabled, GS Balls will make Pokemon shiny.");
+        gsBallCrafting = createBooleanProperty(config, "gs_ball", "_crafting", true, "If enabled, GS Balls will be craftable.");
+        perfectCherishBall = createBooleanProperty(config, "perfect_cherish_ball", "_catching", false, "If enabled, Cherish Balls will make all IVs perfect (value of 31)");
+        cherishBallCrafting = createBooleanProperty(config, "cherish_ball", "_crafting", true, "If enabled, Cherish Balls will be craftable.");
+        gen2ShinyBreed = createBooleanProperty(config, "gen2_shiny", "_breeding", false, "If enabled, a shiny parent makes default shiny egg chance 1/64 (Affected by existing modifiers).");
+        dittoLegend3IV = createBooleanProperty(config, "ditto_legend_3IV", "_breeding", false, "If enabled, legendaries and UBs from Ditto-Ditto breeding have 3 perfect IVs.");
         if (config.hasChanged())
             config.save();
     }

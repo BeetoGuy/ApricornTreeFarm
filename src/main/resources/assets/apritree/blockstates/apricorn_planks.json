@@ -1,7 +1,7 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "apritree:apricorn_planks"
+    "model": "cube_all"
   },
   "variants": {
     "normal": [],
@@ -11,22 +11,22 @@
       }
     ],
     "type":{
-      "black": {},
-      "white": {},
-      "pink": {},
-      "green": {},
-      "red": {},
-      "blue": {},
-      "yellow": {},
-      "purple": {},
-      "orange": {},
-      "cyan": {},
-      "gray": {},
-      "light_gray": {},
-      "brown": {},
-      "light_blue": {},
-      "lime": {},
-      "magenta": {}
+      "black": {"textures": {"all": "apritree:blocks/planks_black"}},
+      "white": {"textures": {"all": "apritree:blocks/planks_white"}},
+      "pink": {"textures": {"all": "apritree:blocks/planks_pink"}},
+      "green": {"textures": {"all": "apritree:blocks/planks_green"}},
+      "red": {"textures": {"all": "apritree:blocks/planks_red"}},
+      "blue": {"textures": {"all": "apritree:blocks/planks_blue"}},
+      "yellow": {"textures": {"all": "apritree:blocks/planks_yellow"}},
+      "purple": {"textures": {"all": "apritree:blocks/planks_purple"}},
+      "orange": {"textures": {"all": "apritree:blocks/planks_orange"}},
+      "cyan": {"textures": {"all": "apritree:blocks/planks_cyan"}},
+      "gray": {"textures": {"all": "apritree:blocks/planks_gray"}},
+      "light_gray": {"textures": {"all": "apritree:blocks/planks_light_gray"}},
+      "brown": {"textures": {"all": "apritree:blocks/planks_brown"}},
+      "light_blue": {"textures": {"all": "apritree:blocks/planks_light_blue"}},
+      "lime": {"textures": {"all": "apritree:blocks/planks_lime"}},
+      "magenta": {"textures": {"all": "apritree:blocks/planks_magenta"}}
     }
   }
 }

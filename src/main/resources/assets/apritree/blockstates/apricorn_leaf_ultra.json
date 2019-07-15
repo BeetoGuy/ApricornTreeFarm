@@ -15,6 +15,11 @@
     "decayable": {
       "true": {},
       "false": {}
+    },
+    "type": {
+      "ultra": {},
+      "gs": {"model": "apritree:leaves_custom2"},
+      "cherish": {"model": "apritree:leaves_custom3"}
     }
   }
 }

@@ -30,7 +30,7 @@ public class BlockSpecialPlanks extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 7; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }

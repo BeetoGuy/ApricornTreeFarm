@@ -199,7 +199,7 @@ public class TileEntityRoller extends TileEntity implements ITickable {
                 return super.insertItem(slot, stack, simulate);
             else if (slot == 2 && stack.getItem() instanceof ICapabilityAddon)
                 return super.insertItem(slot, stack, simulate);
-            return ItemStack.EMPTY;
+            return stack;
         }
 
         @Override

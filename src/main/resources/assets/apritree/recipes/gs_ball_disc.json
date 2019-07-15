@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "apriconfig",
+      "enabled": "gs_ball_crafting"
+    }
+  ],
+  "result": {
+    "item": "apritree:masterball_parts",
+    "data": 6
+  },
+  "pattern": [
+    "YXY"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "X": {
+      "item": "apritree:apricorn",
+      "data": 29
+    },
+    "Y": {
+      "item": "apritree:apricorn",
+      "data": 16
+    }
+  }
+}

@@ -17,6 +17,23 @@
         "transform": "forge:default-block"
       }
     ],
+    "type": {
+      "ultra": {},
+      "gs": {"textures": {
+        "bottom": "apritree:blocks/shinycorn_bottom",
+        "top": "apritree:blocks/apricorn_top",
+        "side": "apritree:blocks/shinycorn_side",
+        "overlay": "apritree:blocks/apricorn_overlay"
+      }},
+      "cherish": {
+        "textures": {
+          "bottom": "apritree:blocks/crimsoncorn_bottom",
+          "top": "apritree:blocks/apricorn_top",
+          "side": "apritree:blocks/crimsoncorn_side",
+          "overlay": "apritree:blocks/apricorn_overlay"
+        }
+      }
+    },
     "stage": {
       "0": {
         "model": "apritree:apricorn_stage_zero"

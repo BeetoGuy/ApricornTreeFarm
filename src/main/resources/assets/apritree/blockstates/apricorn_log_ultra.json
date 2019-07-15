@@ -1,18 +1,33 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "apritree:log_ultra"
+    "model": "apritree:log",
+    "textures": {
+      "end": "apritree:blocks/log_ultra_top",
+      "side": "apritree:blocks/log_ultra"
+    }
   },
   "variants": {
     "normal": [],
     "inventory": [{
       "transform": "forge:default-block"
     }],
+    "type": {
+      "ultra": {},
+      "gs": {"textures": {
+        "end": "apritree:blocks/top_orange",
+        "side": "blocks/log_oak"
+      }},
+      "cherish": {"textures": {
+        "end": "apritree:blocks/top_red",
+        "side": "blocks/log_oak"
+      }}
+    },
     "axis": {
       "x": {"x": 90, "y": 90},
       "y": {},
       "z": {"x": 90},
-      "none": {"model": "apritree:bark_ultra"}
+      "none": {"model": "apritree:bark"}
     }
   }
 }
