@@ -20,7 +20,7 @@ import apritree.worldgen.gen.ApricornTreeGenerator;
 
 import java.util.Random;
 
-@Mod(name="Apricorn Tree Farm", modid="apritree", version="2.1.0", dependencies="required-after:pixelmon@[7.0.0,);after:betterwithmods;after:immersiveengineering;after:industrialforegoing;before:bonsaitrees")
+@Mod(name="Apricorn Tree Farm", modid="apritree", version="2.1.1", dependencies="required-after:pixelmon@[7.0.0,);after:betterwithmods;after:immersiveengineering;after:industrialforegoing;before:bonsaitrees")
 public class ApriTree
 {
     @Mod.Instance("apritree")

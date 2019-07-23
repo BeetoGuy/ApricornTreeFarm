@@ -14,7 +14,7 @@
       "from": [7, 13, 7],
       "to": [9, 15, 9],
       "faces": {
-        "down": {"texture": "#bottom", "tintindex": 0},
+        "down": {"texture": "#bottom", "tintindex": 0, "uv": [4, 4, 12, 12]},
         "north": {"texture": "#side", "tintindex": 0},
         "south": {"texture": "#side", "tintindex": 0},
         "west": {"texture": "#side", "tintindex": 0},

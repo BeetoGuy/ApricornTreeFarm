@@ -104,7 +104,7 @@ public class ClientProxy extends CommonProxy
                 }
                 return -1;
             }
-        }, ApriRegistry.apricornLeafOne, ApriRegistry.apricornLeafTwo, ApriRegistry.apricornLeafThree, ApriRegistry.apricornLeafFour, ApriRegistry.apricornLeafFive);/*
+        }, ApriRegistry.apricornLeafOne, ApriRegistry.apricornLeafTwo, ApriRegistry.apricornLeafThree, ApriRegistry.apricornLeafFour, ApriRegistry.apricornLeafFive);
         col.registerBlockColorHandler(new IBlockColor() {
             @Override
             public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) {
@@ -115,7 +115,7 @@ public class ClientProxy extends CommonProxy
                 }
                 return -1;
             }
-        }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);
+        }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);/*
         col.registerBlockColorHandler(new IBlockColor() {
             @Override
             public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) {
