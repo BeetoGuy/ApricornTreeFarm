@@ -12,14 +12,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemApricornTools extends Item {
-    @Override
-    public boolean hasContainerItem(ItemStack stack) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getContainerItem(ItemStack stack) {
-        return stack;
+    public ItemApricornTools() {
+        super();
+        this.setContainerItem(this);
     }
 
     @Override
