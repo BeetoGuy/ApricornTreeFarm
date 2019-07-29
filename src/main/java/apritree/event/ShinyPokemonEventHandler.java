@@ -3,6 +3,7 @@ package apritree.event;
 import apritree.ApriTree;
 import apritree.config.ApriConfig;
 import com.google.common.collect.Lists;
+import com.pixelmonmod.pixelmon.Pixelmon;
 import com.pixelmonmod.pixelmon.api.events.BreedEvent;
 import com.pixelmonmod.pixelmon.api.events.CaptureEvent;
 import com.pixelmonmod.pixelmon.config.PixelmonConfig;
@@ -53,6 +54,9 @@ public class ShinyPokemonEventHandler {
                 int chance = evt.ranch.getWorld().provider.getDimension() == UltraSpace.DIM_ID ? (int)(64 * PixelmonConfig.ultraSpaceShinyModifier) : 64;
                 if (!Objects.equals(evt.parent1.getOriginalTrainerUUID(), evt.parent2.getOriginalTrainerUUID()))
                     chance /= 2;
+                if (Pixelmon.storageManager.getParty(evt.owner).getShinyCharm().isActive()) {
+                    chance /= 3;
+                }
                 if (ApriTree.INSTANCE.rand.nextInt(chance) == 0) {
                     evt.getEgg().setShiny(true);
                 }
