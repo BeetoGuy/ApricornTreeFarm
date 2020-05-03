@@ -32,14 +32,14 @@ public class BlockMachine extends BlockHorizontal {
         super(Material.IRON);
         this.setHardness(3.5F);
         this.setResistance(10.0F);
-        this.setUnlocalizedName("apritree:machine");
+        this.setTranslationKey("apritree:machine");
         this.setDefaultState(this.blockState.getBaseState().withProperty(CHARGER, false).withProperty(FACING, EnumFacing.NORTH));
         this.setCreativeTab(CreativeTabs.TOOLS);
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
+    public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT_MIPPED;
     }
@@ -110,7 +110,7 @@ public class BlockMachine extends BlockHorizontal {
     @Override
     public IBlockState getStateFromMeta(int meta) {
         boolean charger = meta > 3;
-        EnumFacing facing = EnumFacing.getHorizontal(meta % 4);
+        EnumFacing facing = EnumFacing.byHorizontalIndex(meta % 4);
         return this.getDefaultState().withProperty(CHARGER, charger).withProperty(FACING, facing);
     }
 

@@ -19,7 +19,7 @@ public class BlockColoredPlanks extends Block {
         this.setHardness(3.5F);
         this.setResistance(5.0F);
         this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-        this.setUnlocalizedName("apritree:planks_colored");
+        this.setTranslationKey("apritree:planks_colored");
     }
 
     @Override

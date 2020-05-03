@@ -15,7 +15,7 @@ public class BlockLogUltra extends BlockLog {
     public BlockLogUltra() {
         super();
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS6, EnumApricorns.ULTRA).withProperty(LOG_AXIS, EnumAxis.Y));
-        this.setUnlocalizedName("apritree:log_ultra");
+        this.setTranslationKey("apritree:log_ultra");
     }
 
     @Override

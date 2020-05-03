@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockSpecialSapling extends BlockBaseSapling {
     public BlockSpecialSapling() {
         super();
-        this.setUnlocalizedName("apritree:special_apricorn_sapling");
+        this.setTranslationKey("apritree:special_apricorn_sapling");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.STAGE, 0).withProperty(StateLibrary.APRICORNS5, EnumApricorns.GILDED));
     }
 

@@ -48,7 +48,7 @@ public class PixelNetwork extends NetWrapper
 
     public static void sendToClient(WorldServer world, BlockPos pos, AbstractPacket pkt)
     {
-        Chunk chunk = world.getChunkFromBlockCoords(pos);
+        Chunk chunk = world.getChunk(pos);
         for(EntityPlayer player : world.playerEntities)
         {
             if(!(player instanceof EntityPlayerMP))

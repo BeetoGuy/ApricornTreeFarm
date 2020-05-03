@@ -20,8 +20,8 @@ public class ItemBlockSapling extends ItemBlock
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack)
+    public String getTranslationKey(ItemStack stack)
     {
-        return super.getUnlocalizedName() + "." + (stack.getItemDamage() & 7);
+        return super.getTranslationKey() + "." + (stack.getItemDamage() & 7);
     }
 }

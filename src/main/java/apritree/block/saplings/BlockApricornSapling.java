@@ -25,7 +25,7 @@ public class BlockApricornSapling extends BlockBaseSapling
     {
         super();
         this.setDefaultState(this.blockState.getBaseState().withProperty(APRICORNS, EnumApricorns.BLACK).withProperty(StateLibrary.STAGE, 0));
-        this.setUnlocalizedName("apritree:apricorn_sapling");
+        this.setTranslationKey("apritree:apricorn_sapling");
     }
 
     @Override

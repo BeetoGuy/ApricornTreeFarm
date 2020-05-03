@@ -15,7 +15,7 @@ public class BlockLog4 extends BlockLog {
     public BlockLog4() {
         super();
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS4, EnumApricorns.BROWN).withProperty(LOG_AXIS, EnumAxis.Y));
-        this.setUnlocalizedName("apritree:log_four");
+        this.setTranslationKey("apritree:log_four");
     }
 
     @Override

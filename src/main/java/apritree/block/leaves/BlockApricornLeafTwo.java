@@ -20,7 +20,7 @@ public class BlockApricornLeafTwo extends BlockApriLeafBase
     public BlockApricornLeafTwo()
     {
         super();
-        this.setUnlocalizedName("apritree:apricorn_leaf_second");
+        this.setTranslationKey("apritree:apricorn_leaf_second");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS2, EnumApricorns.BLUE).withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
     }
 

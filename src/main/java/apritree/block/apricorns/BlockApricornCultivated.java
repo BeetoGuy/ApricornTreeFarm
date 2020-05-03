@@ -14,7 +14,7 @@ import java.util.Random;
 public class BlockApricornCultivated extends BlockApricornPlant {
     public BlockApricornCultivated() {
         super();
-        this.setUnlocalizedName("apritree:apricorn_three");
+        this.setTranslationKey("apritree:apricorn_three");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS3, EnumApricorns.ORANGE).withProperty(STAGE, 0));
         this.setTickRandomly(true);
     }

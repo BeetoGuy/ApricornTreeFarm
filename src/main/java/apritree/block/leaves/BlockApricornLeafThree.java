@@ -18,7 +18,7 @@ import java.util.Random;
 public class BlockApricornLeafThree extends BlockApriLeafBase {
     public BlockApricornLeafThree() {
         super();
-        this.setUnlocalizedName("apritree:apricorn_leaf_third");
+        this.setTranslationKey("apritree:apricorn_leaf_third");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS3, EnumApricorns.ORANGE).withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
     }
 

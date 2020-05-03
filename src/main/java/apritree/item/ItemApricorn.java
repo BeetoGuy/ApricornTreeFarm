@@ -14,7 +14,7 @@ public class ItemApricorn extends Item
     public ItemApricorn()
     {
         super();
-        this.setUnlocalizedName("apritree:apricorn");
+        this.setTranslationKey("apritree:apricorn");
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
         this.setCreativeTab(PixelmonCreativeTabs.natural);
@@ -32,8 +32,8 @@ public class ItemApricorn extends Item
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack)
+    public String getTranslationKey(ItemStack stack)
     {
-        return super.getUnlocalizedName() + "." + stack.getItemDamage();
+        return super.getTranslationKey() + "." + stack.getItemDamage();
     }
 }

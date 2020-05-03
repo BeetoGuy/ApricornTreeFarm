@@ -15,7 +15,7 @@ public class BlockApricornUltra extends BlockApricornPlant {
     public BlockApricornUltra() {
         super();
         this.setTickRandomly(true);
-        this.setUnlocalizedName("apritree:ultra_apricorn");
+        this.setTranslationKey("apritree:ultra_apricorn");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS6, EnumApricorns.ULTRA).withProperty(STAGE, 0));
     }
 

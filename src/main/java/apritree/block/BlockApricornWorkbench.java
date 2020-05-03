@@ -15,7 +15,7 @@ public class BlockApricornWorkbench extends Block {
         super(Material.WOOD);
         this.setHardness(3.0F);
         this.setResistance(5.0F);
-        this.setUnlocalizedName("apritree:apricorn_workbench");
+        this.setTranslationKey("apritree:apricorn_workbench");
     }
 
     @Override

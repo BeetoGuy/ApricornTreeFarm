@@ -19,7 +19,7 @@ public class BlockSaplingUltra extends BlockBaseSapling {
 
     public BlockSaplingUltra() {
         super();
-        this.setUnlocalizedName("apritree:ultra_apricorn_sapling");
+        this.setTranslationKey("apritree:ultra_apricorn_sapling");
         this.setLightLevel(0.625F);
     }
 

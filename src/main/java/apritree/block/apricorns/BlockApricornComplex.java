@@ -12,7 +12,7 @@ public class BlockApricornComplex extends BlockApricornPlant
     public BlockApricornComplex()
     {
         super();
-        this.setUnlocalizedName("apritree:apricorn_one");
+        this.setTranslationKey("apritree:apricorn_one");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS1, EnumApricorns.BLACK).withProperty(STAGE, 0));
         this.setTickRandomly(true);
     }

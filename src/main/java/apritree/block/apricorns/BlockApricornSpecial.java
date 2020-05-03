@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 public class BlockApricornSpecial extends BlockApricornPlant {
     public BlockApricornSpecial() {
         super();
-        this.setUnlocalizedName("apritree:apricorn_five");
+        this.setTranslationKey("apritree:apricorn_five");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS5, EnumApricorns.GILDED).withProperty(STAGE, 0));
         this.setTickRandomly(true);
     }

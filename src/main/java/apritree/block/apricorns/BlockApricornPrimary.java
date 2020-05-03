@@ -16,7 +16,7 @@ public class BlockApricornPrimary extends BlockApricornPlant
     public BlockApricornPrimary()
     {
         super();
-        this.setUnlocalizedName("apritree:apricorn_two");
+        this.setTranslationKey("apritree:apricorn_two");
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS2, EnumApricorns.BLUE).withProperty(STAGE, 0));
         this.setTickRandomly(true);
     }

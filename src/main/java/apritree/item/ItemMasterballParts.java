@@ -15,7 +15,7 @@ public class ItemMasterballParts extends Item
     public ItemMasterballParts()
     {
         super();
-        this.setUnlocalizedName("apritree:masterball_parts");
+        this.setTranslationKey("apritree:masterball_parts");
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
         this.setCreativeTab(PixelmonCreativeTabs.pokeball);
@@ -33,8 +33,8 @@ public class ItemMasterballParts extends Item
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack)
+    public String getTranslationKey(ItemStack stack)
     {
-        return super.getUnlocalizedName() + "." + stack.getItemDamage();
+        return super.getTranslationKey() + "." + stack.getItemDamage();
     }
 }

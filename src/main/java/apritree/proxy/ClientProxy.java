@@ -115,17 +115,7 @@ public class ClientProxy extends CommonProxy
                 }
                 return -1;
             }
-        }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);/*
-        col.registerBlockColorHandler(new IBlockColor() {
-            @Override
-            public int colorMultiplier(IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) {
-                if (tintIndex > -1) {
-                    if (state.getBlock() == ApriRegistry.plankColor)
-                        return state.getValue(BlockColoredPlanks.APRICORNS).getColor();
-                }
-                return -1;
-            }
-        }, ApriRegistry.plankColor);*/
+        }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);
         final ItemColors itCol = Minecraft.getMinecraft().getItemColors();
         itCol.registerItemColorHandler(new IItemColor() {
             @Override
@@ -154,19 +144,7 @@ public class ClientProxy extends CommonProxy
                 }
                 return -1;
             }
-        }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);/*
-        itCol.registerItemColorHandler(new IItemColor() {
-            @Override
-            public int colorMultiplier(ItemStack stack, int tintIndex) {
-                if (tintIndex > -1 && stack.getItem() instanceof ItemBlock) {
-                    Block block = ((ItemBlock)stack.getItem()).getBlock();
-                    if (block == ApriRegistry.plankColor) {
-                        return ApriRegistry.plankColor.getStateFromMeta(stack.getItemDamage()).getValue(BlockColoredPlanks.APRICORNS).getColor();
-                    }
-                }
-                return -1;
-            }
-        }, ApriRegistry.plankColor);*/
+        }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);
     }
 
     public static void registerSaplingModel(String location, @Nonnull Block block, String... variants)

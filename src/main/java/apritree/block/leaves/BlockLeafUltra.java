@@ -23,7 +23,7 @@ import java.util.Random;
 public class BlockLeafUltra extends BlockApriLeafBase {
     public BlockLeafUltra() {
         super();
-        this.setUnlocalizedName("apritree:ultra_leaves");
+        this.setTranslationKey("apritree:ultra_leaves");
         this.setTickRandomly(true);
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS6, EnumApricorns.ULTRA).withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
         this.setLightLevel(.625F);

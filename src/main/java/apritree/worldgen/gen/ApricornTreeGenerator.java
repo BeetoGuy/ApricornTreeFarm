@@ -43,8 +43,8 @@ public class ApricornTreeGenerator implements IWorldGenerator {
         int randChance = world.getWorldType() == WorldType.FLAT ? 100 : 10;
         if (rand.nextInt(randChance) != 0) return;
         List<IBlockState> states = new ArrayList<IBlockState>();
-        int x = chunkX * 16 + rand.nextInt(16);
-        int z = chunkZ * 16 + rand.nextInt(16);
+        int x = chunkX * 16 + 8 + rand.nextInt(16);
+        int z = chunkZ * 16 + 8 + rand.nextInt(16);
         int y = 128;
         BlockPos pos = findGround(world, x, y, z);
 
@@ -72,8 +72,8 @@ public class ApricornTreeGenerator implements IWorldGenerator {
 
     private void generateUltraSpace(Random rand, int chunkX, int chunkZ, World world) {
         if (rand.nextInt(10) != 0) return;
-        int x = chunkX * 16 + rand.nextInt(16);
-        int z = chunkZ * 16 + rand.nextInt(16);
+        int x = chunkX * 16 + 8 + rand.nextInt(16);
+        int z = chunkZ * 16 + 8 + rand.nextInt(16);
         int y = world.getHeight(new BlockPos(x, 0, z)).getY();
         BlockPos pos = findGround(world, x, y, z);
         if (isGround(world, pos.down()) && isReplacable(world, pos) && isAir(world, pos.up())) {

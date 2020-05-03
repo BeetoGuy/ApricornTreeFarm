@@ -72,8 +72,8 @@ public class ApriRegistry
 
     public static Item apricorn = new ItemApricorn().setRegistryName("apricorn");
     public static Item masterball = new ItemMasterballParts().setRegistryName("masterball_parts");
-    public static Item ball_mold = new Item().setRegistryName("ball_mold").setUnlocalizedName("apritree:ball_mold").setCreativeTab(PixelmonCreativeTabs.utilityBlocks).setMaxStackSize(1);
-    public static Item apricornTool = new ItemApricornTools().setRegistryName("apricorn_tools").setUnlocalizedName("apritree:apricorn_tools").setCreativeTab(CreativeTabs.TOOLS).setMaxStackSize(1);
+    public static Item ball_mold = new Item().setRegistryName("ball_mold").setTranslationKey("apritree:ball_mold").setCreativeTab(PixelmonCreativeTabs.utilityBlocks).setMaxStackSize(1);
+    public static Item apricornTool = new ItemApricornTools().setRegistryName("apricorn_tools").setTranslationKey("apritree:apricorn_tools").setCreativeTab(CreativeTabs.TOOLS).setMaxStackSize(1);
 
     //These following items will not always be there
     public static Item mech_adapter = null;

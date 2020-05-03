@@ -1,5 +1,7 @@
 package apritree.block;
 
+import com.pixelmonmod.pixelmon.Pixelmon;
+import com.pixelmonmod.pixelmon.api.events.ApricornEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.IGrowable;
@@ -8,6 +10,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -68,7 +71,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
 
     @Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer()
+    public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT_MIPPED;
     }
@@ -115,7 +118,9 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
     {
         if (state.getValue(STAGE) == 3) {
             if (!world.isRemote) {
-                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, getApricorn(state).copy());
+                ApricornEvent.PickApricorn evt = new ApricornEvent.PickApricorn(null, pos, (EntityPlayerMP)player, null, getApricorn(state).copy());
+                Pixelmon.EVENT_BUS.post(evt);
+                dropApricorn(world, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, evt.getPickedStack());
                 world.setBlockToAir(pos);
             }
             return true;
@@ -165,7 +170,7 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
 
     @Override
     public boolean canUseBonemeal(World world, Random random, BlockPos pos, IBlockState state) {
-        return false;
+        return true;
     }
 
     @Override
@@ -175,9 +180,11 @@ public abstract class BlockApricornPlant extends Block implements IPlantable, IG
 
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        int chance = getEnumApricorn(state).getGrowthChance();
+        apricornHarvest(worldIn, pos, state, rand, chance);/*
         int i = state.getValue(STAGE) + 1;
         if (i > 3)
             i = 3;
-        worldIn.setBlockState(pos, state.withProperty(STAGE, i), 2);
+        worldIn.setBlockState(pos, state.withProperty(STAGE, i), 2);*/
     }
 }

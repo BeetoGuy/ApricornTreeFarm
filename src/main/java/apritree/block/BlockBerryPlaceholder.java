@@ -11,7 +11,7 @@ public class BlockBerryPlaceholder extends Block {
 
     public BlockBerryPlaceholder() {
         super(Material.PLANTS);
-        this.setUnlocalizedName("apritree:berrybush");
+        this.setTranslationKey("apritree:berrybush");
         this.setRegistryName("berrybush");
     }
 
