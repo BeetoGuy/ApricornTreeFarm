@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "pixelmon:dream_ball"
+  },
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "apritree:masterball_parts",
+      "data": 11
+    },
+    {
+      "item": "minecraft:stone_button"
+    },
+    {
+      "item": "#POKEBALL_BASE"
+    }
+  ]
+}

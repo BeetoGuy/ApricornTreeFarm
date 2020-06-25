@@ -30,9 +30,9 @@ public class AnvilHeatingWrapper extends ExternalHeaterHandler.HeatableAdapter<T
         boolean canCook = canCook(anvil);
         if (canCook) {
             boolean running = anvil.isRunning();
-            int burnTime = anvil.anvilRunTime;
+            int burnTime = anvil.fuelBurnTime;
             if (burnTime < 200) {
-                anvil.currentItemRunTime = 200;
+                anvil.currentFuelBurnTime = 200;
                 int heatAttempt = 4;
                 int heatEnergyRatio = Math.max(1, ExternalHeaterHandler.defaultFurnaceEnergyCost);
                 int energyToUse = Math.min(energyAvailable, heatAttempt * heatEnergyRatio);
@@ -43,7 +43,7 @@ public class AnvilHeatingWrapper extends ExternalHeaterHandler.HeatableAdapter<T
                         heat -= reduction;
                     }
                     if (!anvil.getWorld().isRemote) {
-                        anvil.anvilRunTime += heat;//= Math.min(burnTime + heat, 200);
+                        anvil.fuelBurnTime += heat;//= Math.min(burnTime + heat, 200);
                         if (!running) {
                             ((WorldServer) anvil.getWorld()).getPlayerChunkMap().markBlockForUpdate(anvil.getPos());
                         }

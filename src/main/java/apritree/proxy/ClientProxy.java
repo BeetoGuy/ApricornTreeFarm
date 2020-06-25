@@ -26,11 +26,13 @@ import apritree.utils.ColorUtil;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+@SideOnly(Side.CLIENT)
 @Mod.EventBusSubscriber(modid = "apritree", value = Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
@@ -43,8 +45,8 @@ public class ClientProxy extends CommonProxy
         registerSaplingModel("apritree:apricorn_sapling", ApriRegistry.apricornSaplingCultivated, variants);
         variants = new String[] {"black", "green", "red", "lime"};
         registerSaplingModel("apritree:apricorn_sapling", ApriRegistry.apricornSaplingSpecial, variants);
-        registerSaplingModel("apritree:apricorn_sapling", ApriRegistry.apricornSaplingUltra, "ultra_item", "orange", "red");
-        registerBlockModel("apritree:apricorn_log_ultra", ApriRegistry.ultraLog, new String[]{"axis=y,type=ultra", "axis=y,type=gs", "axis=y,type=cherish"});
+        registerSaplingModel("apritree:apricorn_sapling", ApriRegistry.apricornSaplingUltra, "ultra_item", "orange", "red", "magenta");
+        registerBlockModel("apritree:apricorn_log_ultra", ApriRegistry.ultraLog, new String[]{"axis=y,type=ultra", "axis=y,type=gs", "axis=y,type=cherish", "axis=y,type=dream"});
         variants = new String[]{"check_decay=true,decayable=false,type=black", "check_decay=true,decayable=false,type=white", "check_decay=true,decayable=false,type=pink", "check_decay=true,decayable=false,type=green"};
         registerBlockModel("apritree:apricorn_leaf_one", ApriRegistry.apricornLeafOne, variants);
         variants = new String[]{"check_decay=true,decayable=false,type=blue", "check_decay=true,decayable=false,type=yellow", "check_decay=true,decayable=false,type=red", "check_decay=true,decayable=false,type=purple"};
@@ -55,7 +57,7 @@ public class ClientProxy extends CommonProxy
         registerBlockModel("apritree:apricorn_leaf_four", ApriRegistry.apricornLeafFour, variants);
         variants = new String[]{"check_decay=true,decayable=false,type=gilded", "check_decay=true,decayable=false,type=dark", "check_decay=true,decayable=false,type=spotted", "check_decay=true,decayable=false,type=striped"};
         registerBlockModel("apritree:apricorn_leaf_five", ApriRegistry.apricornLeafFive, variants);
-        registerBlockModel("apritree:apricorn_leaf_ultra", ApriRegistry.apricornLeafUltra, new String[] {"check_decay=true,decayable=false,type=ultra", "check_decay=true,decayable=false,type=gs", "check_decay=true,decayable=false,type=cherish"});
+        registerBlockModel("apritree:apricorn_leaf_ultra", ApriRegistry.apricornLeafUltra, new String[] {"check_decay=true,decayable=false,type=ultra", "check_decay=true,decayable=false,type=gs", "check_decay=true,decayable=false,type=cherish", "check_decay=true,decayable=false,type=dream"});
         variants = new String[] {"axis=y,type=black", "axis=y,type=white", "axis=y,type=pink", "axis=y,type=green"};
         registerBlockModel("apritree:apricorn_log_one", ApriRegistry.logOne, variants);
         variants = new String[] {"axis=y,type=blue", "axis=y,type=yellow", "axis=y,type=red", "axis=y,type=purple"};
@@ -69,16 +71,16 @@ public class ClientProxy extends CommonProxy
         variants = new String[] {"type=black", "type=white", "type=pink", "type=green", "type=blue", "type=yellow", "type=red", "type=purple", "type=orange", "type=cyan", "type=gray", "type=light_gray",
         "type=brown", "type=light_blue", "type=lime", "type=magenta"};
         registerBlockModel("apritree:apricorn_planks", ApriRegistry.plankColor, variants);
-        variants = new String[] {"type=gilded", "type=dark", "type=spotted", "type=striped", "type=ultra", "type=gs", "type=cherish"};
+        variants = new String[] {"type=gilded", "type=dark", "type=spotted", "type=striped", "type=ultra", "type=gs", "type=cherish", "type=dream"};
         registerBlockModel("apritree:apricorn_planks_special", ApriRegistry.plankSpecial, variants);
         registerBlockModel("apritree:machine", ApriRegistry.machine, new int[] {0, 4}, "charger=false,facing=north", "charger=true,facing=north");
         registerBlockModel("apritree:apricorn_workbench", ApriRegistry.apriWorkbench);
         variants = new String[]{"purple_apricorn", "purple_apricorn_cooked", "ultra_apricorn", "ultra_apricorn_cooked", "orange_apricorn", "cyan_apricorn", "gray_apricorn", "light_gray_apricorn", "brown_apricorn",
                 "light_blue_apricorn", "lime_apricorn", "magenta_apricorn", "gilded_apricorn", "dark_apricorn", "spotted_apricorn", "striped_apricorn",
                 "orange_apricorn_cooked", "cyan_apricorn_cooked", "gray_apricorn_cooked", "light_gray_apricorn_cooked", "brown_apricorn_cooked", "light_blue_apricorn_cooked", "lime_apricorn_cooked", "magenta_apricorn_cooked",
-                "gilded_apricorn_cooked", "dark_apricorn_cooked", "spotted_apricorn_cooked", "striped_apricorn_cooked", "shiny_apricorn", "shiny_apricorn_cooked", "crimson_apricorn", "crimson_apricorn_cooked"};
+                "gilded_apricorn_cooked", "dark_apricorn_cooked", "spotted_apricorn_cooked", "striped_apricorn_cooked", "shiny_apricorn", "shiny_apricorn_cooked", "crimson_apricorn", "crimson_apricorn_cooked", "wavy_apricorn", "wavy_apricorn_cooked"};
         registerItemModels(ApriRegistry.apricorn, variants);
-        variants = new String[] {"masterball_disc", "masterball_lid", "steel_disc", "steel_base", "beastball_disc", "beastball_lid", "gsball_disc", "gsball_lid", "cherishball_disc", "cherishball_lid"};
+        variants = new String[] {"masterball_disc", "masterball_lid", "steel_disc", "steel_base", "beastball_disc", "beastball_lid", "gsball_disc", "gsball_lid", "cherishball_disc", "cherishball_lid", "dreamball_disc", "dreamball_lid"};
         registerItemModels(ApriRegistry.masterball, variants);
         registerItemModel(ApriRegistry.ball_mold, OreDictionary.WILDCARD_VALUE, "apritree:ball_mold");
         registerItemModel(ApriRegistry.apricornTool, OreDictionary.WILDCARD_VALUE, "apritree:apricorn_tools");
@@ -147,6 +149,7 @@ public class ClientProxy extends CommonProxy
         }, ApriRegistry.apricornOne, ApriRegistry.apricornTwo, ApriRegistry.apricornThree, ApriRegistry.apricornFour);
     }
 
+    @SideOnly(Side.CLIENT)
     public static void registerSaplingModel(String location, @Nonnull Block block, String... variants)
     {
         for(int i = 0; i < variants.length; i++)

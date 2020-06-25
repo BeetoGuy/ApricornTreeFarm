@@ -22,7 +22,7 @@ public class BlockApricornUltra extends BlockApricornPlant {
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand)
     {
-        if(state.getValue(StateLibrary.APRICORNS6) == EnumApricorns.ULTRA)
+        if(state.getValue(StateLibrary.APRICORNS6) == EnumApricorns.ULTRA || state.getValue(StateLibrary.APRICORNS6) == EnumApricorns.DREAM)
             apricornHarvest(world, pos, state, rand, 30);
         else
             apricornHarvest(world, pos, state, rand, 151);

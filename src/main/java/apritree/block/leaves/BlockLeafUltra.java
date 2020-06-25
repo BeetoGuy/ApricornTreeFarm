@@ -26,7 +26,6 @@ public class BlockLeafUltra extends BlockApriLeafBase {
         this.setTranslationKey("apritree:ultra_leaves");
         this.setTickRandomly(true);
         this.setDefaultState(this.blockState.getBaseState().withProperty(StateLibrary.APRICORNS6, EnumApricorns.ULTRA).withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true));
-        this.setLightLevel(.625F);
     }
 
     @Override
@@ -60,8 +59,8 @@ public class BlockLeafUltra extends BlockApriLeafBase {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-        list.add(new ItemStack(this, 1, 0));
-        list.add(new ItemStack(this, 1, 1));
+        for (int i = 0; i < 4; i++)
+            list.add(new ItemStack(this, 1, i));
     }
 
     public EnumApricorns getApricornType(int meta)

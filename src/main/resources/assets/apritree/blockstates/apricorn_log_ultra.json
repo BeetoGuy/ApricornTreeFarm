@@ -21,6 +21,10 @@
       "cherish": {"textures": {
         "end": "apritree:blocks/top_red",
         "side": "blocks/log_oak"
+      }},
+      "dream": {"textures": {
+        "end": "apritree:blocks/top_wavy",
+        "side": "blocks/log_oak"
       }}
     },
     "axis": {

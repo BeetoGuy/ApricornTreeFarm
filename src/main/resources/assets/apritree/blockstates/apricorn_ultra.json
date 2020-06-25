@@ -32,6 +32,14 @@
           "side": "apritree:blocks/crimsoncorn_side",
           "overlay": "apritree:blocks/apricorn_overlay"
         }
+      },
+      "dream": {
+        "textures": {
+          "bottom": "apritree:blocks/dreamcorn_bottom",
+          "top": "apritree:blocks/apricorn_top",
+          "side": "apritree:blocks/dreamcorn_side",
+          "overlay": "apritree:blocks/apricorn_overlay"
+        }
       }
     },
     "stage": {

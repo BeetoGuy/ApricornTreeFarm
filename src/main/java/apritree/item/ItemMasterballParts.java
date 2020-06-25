@@ -26,7 +26,7 @@ public class ItemMasterballParts extends Item
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list)
     {
         if (tab == this.getCreativeTab())
-        for(int i = 0; i < 8; i++)
+        for(int i = 0; i < 12; i++)
         {
             list.add(new ItemStack(this, 1, i));
         }

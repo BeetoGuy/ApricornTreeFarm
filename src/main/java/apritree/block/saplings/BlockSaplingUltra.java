@@ -36,7 +36,7 @@ public class BlockSaplingUltra extends BlockBaseSapling {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-        for(int i = 0; i < 2; i++) {
+        for(int i = 0; i < 4; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }

@@ -125,45 +125,47 @@ public class ApriRegistry
             registerAnvilRecipe(new ItemStack(masterball, 1, 6), new ItemStack(masterball, 1, 7));
             GameRegistry.addSmelting(new ItemStack(apricorn, 1, 28), new ItemStack(apricorn, 1, 29), 0.1F);
             if (ApriConfig.beastBallCrafting)
-                BreedingRegistry.addApriBreeding(EnumApricorns.ULTRA, EnumApricorns.GILDED, EnumApricorns.GS, 809);
+                BreedingRegistry.addApriBreeding(EnumApricorns.ULTRA, EnumApricorns.GILDED, EnumApricorns.GS, ApriConfig.rareApriChance);
             else
-                BreedingRegistry.addApriBreeding(EnumApricorns.BROWN, EnumApricorns.GILDED, EnumApricorns.GS, 809);
+                BreedingRegistry.addApriBreeding(EnumApricorns.BROWN, EnumApricorns.GILDED, EnumApricorns.GS, ApriConfig.rareApriChance);
         }
         if (ApriConfig.cherishBallCrafting) {
             registerAnvilRecipe(new ItemStack(masterball, 1, 8), new ItemStack(masterball, 1, 9));
             GameRegistry.addSmelting(new ItemStack(apricorn, 1, 30), new ItemStack(apricorn, 1, 31), 0.1F);
             if (ApriConfig.gsBallCrafting)
-                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.GS, EnumApricorns.CHERISH, 809);
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.GS, EnumApricorns.CHERISH, ApriConfig.rareApriChance);
             else if (ApriConfig.beastBallCrafting)
-                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.ULTRA, EnumApricorns.CHERISH, 809);
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.ULTRA, EnumApricorns.CHERISH, ApriConfig.rareApriChance);
             else if (ApriConfig.masterBallCrafting)
-                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.PURPLE, EnumApricorns.CHERISH, 809);
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.PURPLE, EnumApricorns.CHERISH, ApriConfig.rareApriChance);
             else
-                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.GILDED, EnumApricorns.CHERISH, 809);
+                BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.GILDED, EnumApricorns.CHERISH, ApriConfig.rareApriChance);
 
         }
         if (ApriConfig.masterBallCrafting) {
             registerAnvilRecipe(new ItemStack(masterball, 1, 0), new ItemStack(masterball, 1, 1));
             GameRegistry.addSmelting(new ItemStack(apricorn, 1, 0), new ItemStack(apricorn, 1, 1), 0.1F);
-            BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.RED, EnumApricorns.PURPLE, 807);
+            BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.RED, EnumApricorns.PURPLE, ApriConfig.rareApriChance);
         } if (ApriConfig.beastBallCrafting) {
             registerAnvilRecipe(new ItemStack(masterball, 1, 4), new ItemStack(masterball, 1, 5));
             GameRegistry.addSmelting(new ItemStack(apricorn, 1, 2), new ItemStack(apricorn, 1, 3), 0.1F);
         } if (ApriConfig.steelCrafting) {
             registerAnvilRecipe(new ItemStack(masterball, 1, 2), new ItemStack(masterball, 1, 3));
         }
-        BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.GREEN, EnumApricorns.CYAN, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.YELLOW, EnumApricorns.ORANGE, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.BLACK, EnumApricorns.WHITE, EnumApricorns.GRAY, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.GRAY, EnumApricorns.WHITE, EnumApricorns.LIGHTGRAY, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.ORANGE, EnumApricorns.BROWN, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.WHITE, EnumApricorns.LIGHTBLUE, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.GREEN, EnumApricorns.WHITE, EnumApricorns.LIME, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.PINK, EnumApricorns.BLUE, EnumApricorns.MAGENTA, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.ORANGE, EnumApricorns.BLACK, EnumApricorns.GILDED, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.GREEN, EnumApricorns.BLACK, EnumApricorns.DARK, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.BLACK, EnumApricorns.SPOTTED, 100);
-        BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.YELLOW, EnumApricorns.STRIPED, 100);
+        registerAnvilRecipe(new ItemStack(masterball, 1, 10), new ItemStack(masterball, 1, 11));
+        BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.GREEN, EnumApricorns.CYAN, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.YELLOW, EnumApricorns.ORANGE, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.BLACK, EnumApricorns.WHITE, EnumApricorns.GRAY, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.GRAY, EnumApricorns.WHITE, EnumApricorns.LIGHTGRAY, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.ORANGE, EnumApricorns.BROWN, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.WHITE, EnumApricorns.LIGHTBLUE, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.GREEN, EnumApricorns.WHITE, EnumApricorns.LIME, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.PINK, EnumApricorns.BLUE, EnumApricorns.MAGENTA, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.ORANGE, EnumApricorns.BLACK, EnumApricorns.GILDED, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.GREEN, EnumApricorns.BLACK, EnumApricorns.DARK, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.RED, EnumApricorns.BLACK, EnumApricorns.SPOTTED, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.BLUE, EnumApricorns.YELLOW, EnumApricorns.STRIPED, ApriConfig.commonApriChance);
+        BreedingRegistry.addApriBreeding(EnumApricorns.MAGENTA, EnumApricorns.GILDED, EnumApricorns.DREAM, ApriConfig.commonApriChance);
         GameRegistry.addSmelting(new ItemStack(apricorn, 1, 4), new ItemStack(apricorn, 1, 16), 0.1F);
         GameRegistry.addSmelting(new ItemStack(apricorn, 1, 5), new ItemStack(apricorn, 1, 17), 0.1F);
         GameRegistry.addSmelting(new ItemStack(apricorn, 1, 6), new ItemStack(apricorn, 1, 18), 0.1F);
@@ -176,16 +178,15 @@ public class ApriRegistry
         GameRegistry.addSmelting(new ItemStack(apricorn, 1, 13), new ItemStack(apricorn, 1, 25), 0.1F);
         GameRegistry.addSmelting(new ItemStack(apricorn, 1, 14), new ItemStack(apricorn, 1, 26), 0.1F);
         GameRegistry.addSmelting(new ItemStack(apricorn, 1, 15), new ItemStack(apricorn, 1, 27), 0.1F);
+        GameRegistry.addSmelting(new ItemStack(apricorn, 1, 32), new ItemStack(apricorn, 1, 33), 0.1F);
         for (int i = 0; i < 4; i++) {
             GameRegistry.addSmelting(new ItemStack(logOne, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
             GameRegistry.addSmelting(new ItemStack(logTwo, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
             GameRegistry.addSmelting(new ItemStack(logThree, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
             GameRegistry.addSmelting(new ItemStack(logFour, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
             GameRegistry.addSmelting(new ItemStack(logFive, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
+            GameRegistry.addSmelting(new ItemStack(ultraLog, 1, i), new ItemStack(Items.COAL, 1, 1), 0.1F);
         }
-        GameRegistry.addSmelting(new ItemStack(ultraLog, 1, 0), new ItemStack(Items.COAL, 1, 1), 0.1F);
-        GameRegistry.addSmelting(new ItemStack(ultraLog, 1, 1), new ItemStack(Items.COAL, 1, 1), 0.1F);
-        GameRegistry.addSmelting(new ItemStack(ultraLog, 1, 2), new ItemStack(Items.COAL, 1, 1), 0.1F);
         registerOre("treeLeaves", apricornLeafOne);
         registerOre("treeLeaves", apricornLeafTwo);
         registerOre("treeLeaves", apricornLeafThree);

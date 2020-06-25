@@ -17,7 +17,8 @@
       "striped": {"textures": {"all": "apritree:blocks/planks_striped"}},
       "ultra": {"textures": {"all": "apritree:blocks/planks_ultra"}},
       "gs": {"textures": {"all": "apritree:blocks/planks_shiny"}},
-      "cherish": {"textures": {"all": "apritree:blocks/planks_crimson"}}
+      "cherish": {"textures": {"all": "apritree:blocks/planks_crimson"}},
+      "dream": {"textures": {"all": "apritree:blocks/planks_wavy"}}
     }
   }
 }

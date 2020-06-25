@@ -1,0 +1,11 @@
+{
+  "type": "apritree:apricorn_cracking",
+  "apricorn": {
+    "item": "apritree:apricorn",
+    "data": 33
+  },
+  "result": {
+    "item": "apritree:masterball_parts",
+    "data": 10
+  }
+}

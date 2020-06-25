@@ -20,7 +20,8 @@
     "type": {
       "ultra": {},
       "gs": {"textures": {"cross": "apritree:blocks/apricorn_sapling_orange"}},
-      "cherish": {"textures": {"cross": "apritree:blocks/apricorn_sapling_red"}}
+      "cherish": {"textures": {"cross": "apritree:blocks/apricorn_sapling_red"}},
+      "dream": {"textures": {"cross": "apritree:blocks/apricorn_sapling_magenta"}}
     }
   }
 }
