@@ -53,10 +53,10 @@ public class ShinyPokemonEventHandler {
             if (ApriConfig.gen2ShinyBreed && (evt.parent1.isShiny() || evt.parent2.isShiny())) {
                 int chance = evt.ranch.getWorld().provider.getDimension() == UltraSpace.DIM_ID && PixelmonConfig.ultraSpaceShinyModifier > 0.0F ? (int)(64 * PixelmonConfig.ultraSpaceShinyModifier) : 64;
                 if (!Objects.equals(evt.parent1.getOriginalTrainerUUID(), evt.parent2.getOriginalTrainerUUID()))
-                    chance /= 2;
+                    chance /= 2;/*
                 if (Pixelmon.storageManager.getParty(evt.owner).getShinyCharm().isActive()) {
                     chance /= 3;
-                }
+                }*/
                 if (ApriTree.INSTANCE.rand.nextInt(chance) == 0) {
                     evt.getEgg().setShiny(true);
                 }
